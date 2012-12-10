@@ -1,0 +1,40 @@
+sv_cheats 1
+
+// load the base configuration
+//exec default.cfg
+r_decal_cullsize 1
+
+// Setup custom controller
+exec joystick.cfg
+
+//
+// stuff command line statements
+//
+stuffcmds
+
+// run the Hyphen GUI Scripts
+exec "hyphen/GUI.cfg"
+
+// run a user script file if present
+exec autoexec.cfg
+
+clear
+
+toggleconsole
+
+
+
+echo "+                                                               +"
+echo "                                                                 "
+echo "                       - Hyphen GUI v3.1 -                       "
+echo "              - Coded by Edward 'KLUTCH' Knowles -               "
+echo "                                                                 "
+echo "    [ To Show a list of commands type 'cmds' in the console ]    "
+echo "                                                                 "
+echo "    For help, support and updates please visit the following     "
+echo "              http://code.google.com/p/hyphen-gui/               "
+echo "                                                                 "
+echo "+                                                               +"
+echo ""
+echo ""
+echo ""

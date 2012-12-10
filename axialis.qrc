@@ -1,0 +1,416 @@
+<RCC>
+  <qresource prefix="16">
+    <file>Png/16x16/0.png</file>
+    <file>Png/16x16/1.png</file>
+    <file>Png/16x16/2.png</file>
+    <file>Png/16x16/3.png</file>
+    <file>Png/16x16/4.png</file>
+    <file>Png/16x16/5.png</file>
+    <file>Png/16x16/6.png</file>
+    <file>Png/16x16/7.png</file>
+    <file>Png/16x16/8.png</file>
+    <file>Png/16x16/9.png</file>
+    <file>Png/16x16/Alarme.png</file>
+    <file>Png/16x16/Ampersand.png</file>
+    <file>Png/16x16/Application.png</file>
+    <file>Png/16x16/Applications.png</file>
+    <file>Png/16x16/Arrow1 Down.png</file>
+    <file>Png/16x16/Arrow1 DownLeft.png</file>
+    <file>Png/16x16/Arrow1 DownRight.png</file>
+    <file>Png/16x16/Arrow1 Left.png</file>
+    <file>Png/16x16/Arrow1 Right.png</file>
+    <file>Png/16x16/Arrow1 Up.png</file>
+    <file>Png/16x16/Arrow1 UpLeft.png</file>
+    <file>Png/16x16/Arrow1 UpRight.png</file>
+    <file>Png/16x16/Arrow2 Down.png</file>
+    <file>Png/16x16/Arrow2 DownLeft.png</file>
+    <file>Png/16x16/Arrow2 DownRight.png</file>
+    <file>Png/16x16/Arrow2 Left.png</file>
+    <file>Png/16x16/Arrow2 Right.png</file>
+    <file>Png/16x16/Arrow2 Up.png</file>
+    <file>Png/16x16/Arrow2 UpLeft.png</file>
+    <file>Png/16x16/Arrow2 UpRight.png</file>
+    <file>Png/16x16/Arrow3 Down.png</file>
+    <file>Png/16x16/Arrow3 Left.png</file>
+    <file>Png/16x16/Arrow3 Right.png</file>
+    <file>Png/16x16/Arrow3 Up.png</file>
+    <file>Png/16x16/Attach.png</file>
+    <file>Png/16x16/Audio Message.png</file>
+    <file>Png/16x16/Back Top.png</file>
+    <file>Png/16x16/Back.png</file>
+    <file>Png/16x16/Bubble 1.png</file>
+    <file>Png/16x16/Bubble 3.png</file>
+    <file>Png/16x16/Burn.png</file>
+    <file>Png/16x16/Calc.png</file>
+    <file>Png/16x16/Calendar.png</file>
+    <file>Png/16x16/Cancel.png</file>
+    <file>Png/16x16/Car.png</file>
+    <file>Png/16x16/Card1.png</file>
+    <file>Png/16x16/Card2.png</file>
+    <file>Png/16x16/Card3.png</file>
+    <file>Png/16x16/Card4.png</file>
+    <file>Png/16x16/Cart.png</file>
+    <file>Png/16x16/Cart2.png</file>
+    <file>Png/16x16/Cd.png</file>
+    <file>Png/16x16/Clipboard Copy.png</file>
+    <file>Png/16x16/Clipboard Cut.png</file>
+    <file>Png/16x16/Clipboard Paste.png</file>
+    <file>Png/16x16/Clock.png</file>
+    <file>Png/16x16/Computer.png</file>
+    <file>Png/16x16/Contact.png</file>
+    <file>Png/16x16/Copyright.png</file>
+    <file>Png/16x16/Cube.png</file>
+    <file>Png/16x16/Currency Dollar.png</file>
+    <file>Png/16x16/Currency Euro.png</file>
+    <file>Png/16x16/Currency Pound.png</file>
+    <file>Png/16x16/Database.png</file>
+    <file>Png/16x16/Direction Diag1.png</file>
+    <file>Png/16x16/Direction Diag2.png</file>
+    <file>Png/16x16/Direction Horz.png</file>
+    <file>Png/16x16/Direction Vert.png</file>
+    <file>Png/16x16/Directions.png</file>
+    <file>Png/16x16/Discuss.png</file>
+    <file>Png/16x16/Document New.png</file>
+    <file>Png/16x16/Document.png</file>
+    <file>Png/16x16/Document2.png</file>
+    <file>Png/16x16/Dots Down.png</file>
+    <file>Png/16x16/Dots Up.png</file>
+    <file>Png/16x16/Dots.png</file>
+    <file>Png/16x16/Download.png</file>
+    <file>Png/16x16/Email.png</file>
+    <file>Png/16x16/Exclamation.png</file>
+    <file>Png/16x16/Fbook.png</file>
+    <file>Png/16x16/Flag.png</file>
+    <file>Png/16x16/Folder.png</file>
+    <file>Png/16x16/Folder2.png</file>
+    <file>Png/16x16/Folder3.png</file>
+    <file>Png/16x16/Footprint.png</file>
+    <file>Png/16x16/Forbidden.png</file>
+    <file>Png/16x16/Full Screen.png</file>
+    <file>Png/16x16/Full Size.png</file>
+    <file>Png/16x16/Game.png</file>
+    <file>Png/16x16/Gear.png</file>
+    <file>Png/16x16/Globe.png</file>
+    <file>Png/16x16/Go In.png</file>
+    <file>Png/16x16/Go Out.png</file>
+    <file>Png/16x16/Graph.png</file>
+    <file>Png/16x16/Hand.png</file>
+    <file>Png/16x16/Hdd Network.png</file>
+    <file>Png/16x16/Hdd.png</file>
+    <file>Png/16x16/Health.png</file>
+    <file>Png/16x16/Heart.png</file>
+    <file>Png/16x16/Home.png</file>
+    <file>Png/16x16/Home2.png</file>
+    <file>Png/16x16/Info.png</file>
+    <file>Png/16x16/Info2.png</file>
+    <file>Png/16x16/Ipod.png</file>
+    <file>Png/16x16/Key.png</file>
+    <file>Png/16x16/Light.png</file>
+    <file>Png/16x16/Link.png</file>
+    <file>Png/16x16/Lock Open.png</file>
+    <file>Png/16x16/Lock.png</file>
+    <file>Png/16x16/Loop.png</file>
+    <file>Png/16x16/Luggage.png</file>
+    <file>Png/16x16/Mail.png</file>
+    <file>Png/16x16/Man.png</file>
+    <file>Png/16x16/Microphone.png</file>
+    <file>Png/16x16/Minus.png</file>
+    <file>Png/16x16/Mobile.png</file>
+    <file>Png/16x16/Mouse.png</file>
+    <file>Png/16x16/Movie.png</file>
+    <file>Png/16x16/Music.png</file>
+    <file>Png/16x16/Music2.png</file>
+    <file>Png/16x16/Nuke.png</file>
+    <file>Png/16x16/Ok.png</file>
+    <file>Png/16x16/Paragraph.png</file>
+    <file>Png/16x16/Percent.png</file>
+    <file>Png/16x16/Phone.png</file>
+    <file>Png/16x16/Photo.png</file>
+    <file>Png/16x16/Picture.png</file>
+    <file>Png/16x16/Player Eject.png</file>
+    <file>Png/16x16/Player FastFwd.png</file>
+    <file>Png/16x16/Player FastRev.png</file>
+    <file>Png/16x16/Player Next.png</file>
+    <file>Png/16x16/Player Pause.png</file>
+    <file>Png/16x16/Player Play.png</file>
+    <file>Png/16x16/Player Previous.png</file>
+    <file>Png/16x16/Player Record.png</file>
+    <file>Png/16x16/Player Stop.png</file>
+    <file>Png/16x16/Plus.png</file>
+    <file>Png/16x16/Podcast.png</file>
+    <file>Png/16x16/Pointer.png</file>
+    <file>Png/16x16/Poll.png</file>
+    <file>Png/16x16/Printer.png</file>
+    <file>Png/16x16/Puzzle.png</file>
+    <file>Png/16x16/Question.png</file>
+    <file>Png/16x16/Reduced Size.png</file>
+    <file>Png/16x16/Refresh.png</file>
+    <file>Png/16x16/Rss 1.png</file>
+    <file>Png/16x16/Rss 2.png</file>
+    <file>Png/16x16/Save.png</file>
+    <file>Png/16x16/Screen.png</file>
+    <file>Png/16x16/Search.png</file>
+    <file>Png/16x16/Security.png</file>
+    <file>Png/16x16/Sitemap.png</file>
+    <file>Png/16x16/Size Diag1.png</file>
+    <file>Png/16x16/Size Diag2.png</file>
+    <file>Png/16x16/Size Horz.png</file>
+    <file>Png/16x16/Size Vert.png</file>
+    <file>Png/16x16/Sleep.png</file>
+    <file>Png/16x16/Smiley1.png</file>
+    <file>Png/16x16/Smiley2.png</file>
+    <file>Png/16x16/Smiley3.png</file>
+    <file>Png/16x16/Sound Minus.png</file>
+    <file>Png/16x16/Sound Off.png</file>
+    <file>Png/16x16/Sound On.png</file>
+    <file>Png/16x16/Sound Plus.png</file>
+    <file>Png/16x16/Standby.png</file>
+    <file>Png/16x16/Star.png</file>
+    <file>Png/16x16/Start.png</file>
+    <file>Png/16x16/Stats 3.png</file>
+    <file>Png/16x16/Stats.png</file>
+    <file>Png/16x16/Stats2.png</file>
+    <file>Png/16x16/Table.png</file>
+    <file>Png/16x16/Tag.png</file>
+    <file>Png/16x16/Tape.png</file>
+    <file>Png/16x16/Target.png</file>
+    <file>Png/16x16/Text Large.png</file>
+    <file>Png/16x16/Text Meduim.png</file>
+    <file>Png/16x16/Text Minus.png</file>
+    <file>Png/16x16/Text Plus.png</file>
+    <file>Png/16x16/Text Small.png</file>
+    <file>Png/16x16/Thumb Down.png</file>
+    <file>Png/16x16/Thumb Up.png</file>
+    <file>Png/16x16/Tool.png</file>
+    <file>Png/16x16/Tool2.png</file>
+    <file>Png/16x16/Trackback.png</file>
+    <file>Png/16x16/Trash.png</file>
+    <file>Png/16x16/Travel.png</file>
+    <file>Png/16x16/Tree.png</file>
+    <file>Png/16x16/Tv.png</file>
+    <file>Png/16x16/User.png</file>
+    <file>Png/16x16/Video.png</file>
+    <file>Png/16x16/Wait.png</file>
+    <file>Png/16x16/Warning.png</file>
+    <file>Png/16x16/Weather Cloud.png</file>
+    <file>Png/16x16/Weather Could Sun.png</file>
+    <file>Png/16x16/Weather Rain.png</file>
+    <file>Png/16x16/Weather Snow.png</file>
+    <file>Png/16x16/Weather Sun.png</file>
+    <file>Png/16x16/Wizard.png</file>
+    <file>Png/16x16/Woman.png</file>
+    <file>Png/16x16/Wordpress.png</file>
+    <file>Png/16x16/Write.png</file>
+    <file>Png/16x16/Write2.png</file>
+    <file>Png/16x16/Write3.png</file>
+    <file>Png/16x16/Zoom In.png</file>
+    <file>Png/16x16/Zoom Out.png</file>
+  </qresource>
+  <qresource prefix="24">
+    <file>Png/24x24/0.png</file>
+    <file>Png/24x24/1.png</file>
+    <file>Png/24x24/2.png</file>
+    <file>Png/24x24/3.png</file>
+    <file>Png/24x24/4.png</file>
+    <file>Png/24x24/5.png</file>
+    <file>Png/24x24/6.png</file>
+    <file>Png/24x24/7.png</file>
+    <file>Png/24x24/8.png</file>
+    <file>Png/24x24/9.png</file>
+    <file>Png/24x24/Alarme.png</file>
+    <file>Png/24x24/Ampersand.png</file>
+    <file>Png/24x24/Application.png</file>
+    <file>Png/24x24/Applications.png</file>
+    <file>Png/24x24/Arrow1 Down.png</file>
+    <file>Png/24x24/Arrow1 DownLeft.png</file>
+    <file>Png/24x24/Arrow1 DownRight.png</file>
+    <file>Png/24x24/Arrow1 Left.png</file>
+    <file>Png/24x24/Arrow1 Right.png</file>
+    <file>Png/24x24/Arrow1 Up.png</file>
+    <file>Png/24x24/Arrow1 UpLeft.png</file>
+    <file>Png/24x24/Arrow1 UpRight.png</file>
+    <file>Png/24x24/Arrow2 Down.png</file>
+    <file>Png/24x24/Arrow2 DownLeft.png</file>
+    <file>Png/24x24/Arrow2 DownRight.png</file>
+    <file>Png/24x24/Arrow2 Left.png</file>
+    <file>Png/24x24/Arrow2 Right.png</file>
+    <file>Png/24x24/Arrow2 Up.png</file>
+    <file>Png/24x24/Arrow2 UpLeft.png</file>
+    <file>Png/24x24/Arrow2 UpRight.png</file>
+    <file>Png/24x24/Arrow3 Down.png</file>
+    <file>Png/24x24/Arrow3 Left.png</file>
+    <file>Png/24x24/Arrow3 Right.png</file>
+    <file>Png/24x24/Arrow3 Up.png</file>
+    <file>Png/24x24/Attach.png</file>
+    <file>Png/24x24/Audio Message.png</file>
+    <file>Png/24x24/Back Top.png</file>
+    <file>Png/24x24/Back.png</file>
+    <file>Png/24x24/Bubble 1.png</file>
+    <file>Png/24x24/Bubble 3.png</file>
+    <file>Png/24x24/Burn.png</file>
+    <file>Png/24x24/Calc.png</file>
+    <file>Png/24x24/Calendar.png</file>
+    <file>Png/24x24/Cancel.png</file>
+    <file>Png/24x24/Car.png</file>
+    <file>Png/24x24/Card1.png</file>
+    <file>Png/24x24/Card2.png</file>
+    <file>Png/24x24/Card3.png</file>
+    <file>Png/24x24/Card4.png</file>
+    <file>Png/24x24/Cart.png</file>
+    <file>Png/24x24/Cart2.png</file>
+    <file>Png/24x24/Cd.png</file>
+    <file>Png/24x24/Clipboard Copy.png</file>
+    <file>Png/24x24/Clipboard Cut.png</file>
+    <file>Png/24x24/Clipboard Paste.png</file>
+    <file>Png/24x24/Clock.png</file>
+    <file>Png/24x24/Computer.png</file>
+    <file>Png/24x24/Contact.png</file>
+    <file>Png/24x24/Copyright.png</file>
+    <file>Png/24x24/Cube.png</file>
+    <file>Png/24x24/Currency Dollar.png</file>
+    <file>Png/24x24/Currency Euro.png</file>
+    <file>Png/24x24/Currency Pound.png</file>
+    <file>Png/24x24/Database.png</file>
+    <file>Png/24x24/Direction Diag1.png</file>
+    <file>Png/24x24/Direction Diag2.png</file>
+    <file>Png/24x24/Direction Horz.png</file>
+    <file>Png/24x24/Direction Vert.png</file>
+    <file>Png/24x24/Directions.png</file>
+    <file>Png/24x24/Discuss.png</file>
+    <file>Png/24x24/Document New.png</file>
+    <file>Png/24x24/Document.png</file>
+    <file>Png/24x24/Document2.png</file>
+    <file>Png/24x24/Dots Down.png</file>
+    <file>Png/24x24/Dots Up.png</file>
+    <file>Png/24x24/Dots.png</file>
+    <file>Png/24x24/Download.png</file>
+    <file>Png/24x24/Email.png</file>
+    <file>Png/24x24/Exclamation.png</file>
+    <file>Png/24x24/Fbook.png</file>
+    <file>Png/24x24/Flag.png</file>
+    <file>Png/24x24/Folder.png</file>
+    <file>Png/24x24/Folder2.png</file>
+    <file>Png/24x24/Folder3.png</file>
+    <file>Png/24x24/Footprint.png</file>
+    <file>Png/24x24/Forbidden.png</file>
+    <file>Png/24x24/Full Screen.png</file>
+    <file>Png/24x24/Full Size.png</file>
+    <file>Png/24x24/Game.png</file>
+    <file>Png/24x24/Gear.png</file>
+    <file>Png/24x24/Globe.png</file>
+    <file>Png/24x24/Go In.png</file>
+    <file>Png/24x24/Go Out.png</file>
+    <file>Png/24x24/Graph.png</file>
+    <file>Png/24x24/Hand.png</file>
+    <file>Png/24x24/Hdd Network.png</file>
+    <file>Png/24x24/Hdd.png</file>
+    <file>Png/24x24/Health.png</file>
+    <file>Png/24x24/Heart.png</file>
+    <file>Png/24x24/Home.png</file>
+    <file>Png/24x24/Home2.png</file>
+    <file>Png/24x24/Info.png</file>
+    <file>Png/24x24/Info2.png</file>
+    <file>Png/24x24/Ipod.png</file>
+    <file>Png/24x24/Key.png</file>
+    <file>Png/24x24/Light.png</file>
+    <file>Png/24x24/Link.png</file>
+    <file>Png/24x24/Lock Open.png</file>
+    <file>Png/24x24/Lock.png</file>
+    <file>Png/24x24/Loop.png</file>
+    <file>Png/24x24/Luggage.png</file>
+    <file>Png/24x24/Mail.png</file>
+    <file>Png/24x24/Man.png</file>
+    <file>Png/24x24/Microphone.png</file>
+    <file>Png/24x24/Minus.png</file>
+    <file>Png/24x24/Mobile.png</file>
+    <file>Png/24x24/Mouse.png</file>
+    <file>Png/24x24/Movie.png</file>
+    <file>Png/24x24/Music.png</file>
+    <file>Png/24x24/Music2.png</file>
+    <file>Png/24x24/Nuke.png</file>
+    <file>Png/24x24/Ok.png</file>
+    <file>Png/24x24/Paragraph.png</file>
+    <file>Png/24x24/Percent.png</file>
+    <file>Png/24x24/Phone.png</file>
+    <file>Png/24x24/Photo.png</file>
+    <file>Png/24x24/Picture.png</file>
+    <file>Png/24x24/Player Eject.png</file>
+    <file>Png/24x24/Player FastFwd.png</file>
+    <file>Png/24x24/Player FastRev.png</file>
+    <file>Png/24x24/Player Next.png</file>
+    <file>Png/24x24/Player Pause.png</file>
+    <file>Png/24x24/Player Play.png</file>
+    <file>Png/24x24/Player Previous.png</file>
+    <file>Png/24x24/Player Record.png</file>
+    <file>Png/24x24/Player Stop.png</file>
+    <file>Png/24x24/Plus.png</file>
+    <file>Png/24x24/Podcast.png</file>
+    <file>Png/24x24/Pointer.png</file>
+    <file>Png/24x24/Poll.png</file>
+    <file>Png/24x24/Printer.png</file>
+    <file>Png/24x24/Puzzle.png</file>
+    <file>Png/24x24/Question.png</file>
+    <file>Png/24x24/Reduced Size.png</file>
+    <file>Png/24x24/Refresh.png</file>
+    <file>Png/24x24/Rss 1.png</file>
+    <file>Png/24x24/Rss 2.png</file>
+    <file>Png/24x24/Save.png</file>
+    <file>Png/24x24/Screen.png</file>
+    <file>Png/24x24/Search.png</file>
+    <file>Png/24x24/Security.png</file>
+    <file>Png/24x24/Sitemap.png</file>
+    <file>Png/24x24/Size Diag1.png</file>
+    <file>Png/24x24/Size Diag2.png</file>
+    <file>Png/24x24/Size Horz.png</file>
+    <file>Png/24x24/Size Vert.png</file>
+    <file>Png/24x24/Sleep.png</file>
+    <file>Png/24x24/Smiley1.png</file>
+    <file>Png/24x24/Smiley2.png</file>
+    <file>Png/24x24/Smiley3.png</file>
+    <file>Png/24x24/Sound Minus.png</file>
+    <file>Png/24x24/Sound Off.png</file>
+    <file>Png/24x24/Sound On.png</file>
+    <file>Png/24x24/Sound Plus.png</file>
+    <file>Png/24x24/Standby.png</file>
+    <file>Png/24x24/Star.png</file>
+    <file>Png/24x24/Start.png</file>
+    <file>Png/24x24/Stats 3.png</file>
+    <file>Png/24x24/Stats.png</file>
+    <file>Png/24x24/Stats2.png</file>
+    <file>Png/24x24/Table.png</file>
+    <file>Png/24x24/Tag.png</file>
+    <file>Png/24x24/Tape.png</file>
+    <file>Png/24x24/Target.png</file>
+    <file>Png/24x24/Text Large.png</file>
+    <file>Png/24x24/Text Meduim.png</file>
+    <file>Png/24x24/Text Minus.png</file>
+    <file>Png/24x24/Text Plus.png</file>
+    <file>Png/24x24/Text Small.png</file>
+    <file>Png/24x24/Thumb Down.png</file>
+    <file>Png/24x24/Thumb Up.png</file>
+    <file>Png/24x24/Tool.png</file>
+    <file>Png/24x24/Tool2.png</file>
+    <file>Png/24x24/Trackback.png</file>
+    <file>Png/24x24/Trash.png</file>
+    <file>Png/24x24/Travel.png</file>
+    <file>Png/24x24/Tree.png</file>
+    <file>Png/24x24/Tv.png</file>
+    <file>Png/24x24/User.png</file>
+    <file>Png/24x24/Video.png</file>
+    <file>Png/24x24/Wait.png</file>
+    <file>Png/24x24/Warning.png</file>
+    <file>Png/24x24/Weather Cloud.png</file>
+    <file>Png/24x24/Weather Could Sun.png</file>
+    <file>Png/24x24/Weather Rain.png</file>
+    <file>Png/24x24/Weather Snow.png</file>
+    <file>Png/24x24/Weather Sun.png</file>
+    <file>Png/24x24/Wizard.png</file>
+    <file>Png/24x24/Woman.png</file>
+    <file>Png/24x24/Wordpress.png</file>
+    <file>Png/24x24/Write.png</file>
+    <file>Png/24x24/Write2.png</file>
+    <file>Png/24x24/Write3.png</file>
+    <file>Png/24x24/Zoom In.png</file>
+    <file>Png/24x24/Zoom Out.png</file>
+  </qresource>
+</RCC>

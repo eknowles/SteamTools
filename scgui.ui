@@ -1,0 +1,2360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>710</width>
+    <height>440</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>710</width>
+    <height>440</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>710</width>
+    <height>440</height>
+   </size>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::TabFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Steam Tools</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="icons.qrc">
+    <normaloff>:/icons/icons/Steam.ico</normaloff>:/icons/icons/Steam.ico</iconset>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <property name="statusTip">
+   <string/>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QProgressBar:horizontal {
+	background-color: rgba(57,55,54, 255);
+     border-style: solid;
+     border-width: 1px;
+     border-radius: 2px;
+     border-color: rgba(112,109, 105, 255);
+	padding-left:3px;padding-right:3px;
+	color: rgb(218, 218, 218);
+	text-align: center;
+}
+QProgressBar::chunk:horizontal {
+background: #4d6d8c;
+margin-right: 4px; /* space */
+margin-top:3px;
+margin-bottom:3px;
+width: 8px;
+}
+
+
+QListWidget::item:hover, QTreeWidget::item:hover {
+	background-color: none;
+  border:none;
+color:white;
+}
+QListWidget::item:selected, QTreeWidget::item:selected {
+  border:none;
+	background-color: rgb(49, 65, 89);
+color:white;
+}
+
+QHeaderView::section {
+     background-color: #4d4b48;
+     color: rgb(165,165,165);
+     padding:3px 0 3px 5px;
+     border-left:1px solid rgba(0,0,0, 40);border-right:none;border-top:none;border-bottom:none;
+text-transform:uppercase;
+	font: 10px &quot;Arial&quot;;
+ }
+QHeaderView::section:hover {
+     color: rgb(255,255,255);
+ }
+
+ /* style the sort indicator */
+ QHeaderView::down-arrow {
+	image: url(:/icons/icons/steam/icon_down_default.tga);
+ }
+
+ QHeaderView::up-arrow {
+	image: url(:/icons/icons/steam/icon_up_default.tga);
+ }
+
+
+QScrollBar {
+background: rgba(215, 214, 213, 10)/*#5d5a58*/;
+border:none;
+border-style:none;
+}
+QScrollBar:horizontal {
+         
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(50, 50, 50, 255), stop:0.5 rgba(0, 0, 0, 0));
+         height: 15px;
+         margin: 0px 23px 1 23px;
+     }
+
+     QScrollBar::handle:horizontal {
+         background:  #615f5c;
+         min-width: 20px;
+         border: 1px solid #615f5c;
+    	 border-width: 1px;
+     	border-radius: 2px;
+         image: url(:/icons/icons/steam/icon_scroll_handle.tga);
+     }
+
+     QScrollBar::handle:horizontal:hover {
+         background: #64615e;
+         border: 1px solid #64615e;
+     }
+     QScrollBar::handle:vertical:hover {
+         background: #64615e;
+         border: 1px solid #64615e;
+     }
+
+     QScrollBar::add-line:horizontal {
+	image: url(:/icons/icons/steam/icon_right_default.tga);
+         background: #5d5a58;
+         width: 19px;
+	margin:0px 1px 1px 0; 
+         subcontrol-position: right;
+         subcontrol-origin: margin;
+         border: 1px solid #5e5b58;
+     border-width: 1px;
+     border-radius: 2px;
+     }
+
+     QScrollBar::sub-line:horizontal {
+	image: url(:/icons/icons/steam/icon_left_default.tga);
+         background: #5e5b58;
+         width: 19px;
+         subcontrol-position: top left;
+         subcontrol-origin: margin;
+       border: 1px solid #5d5a58;
+margin:0 0 1px 1px; 
+     border-width: 1px;
+     border-radius: 2px;
+     }
+
+     QScrollBar::add-line:horizontal:hover {
+         background: #64615e;
+         border: 1px solid #64615e;
+     }
+     QScrollBar::sub-line:horizontal:hover {
+         background: #64615e;
+         border: 1px solid #64615e;
+     }
+
+     QScrollBar:left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+     }
+
+     QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+         background: none;
+     }
+
+
+
+
+QScrollBar:vertical {
+	background: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0.5 rgba(10, 10, 10, 0), stop:1 rgba(50, 50, 50, 255));
+         width: 15px;
+         margin: 23px 1px 24px 0;
+     }
+
+     QScrollBar::handle:vertical {
+         background:  #615f5c;
+         min-height: 20px;
+         border: 1px solid #615f5c;
+    	 border-width: 1px;
+     border-radius: 2px;
+image: url(:/icons/icons/steam/icon_scroll_handle.tga);
+     }
+
+     QScrollBar::add-line:vertical {
+         background: #5d5a58;
+         height: 19px;
+	margin:1px 1px 1px 0; 
+         subcontrol-position: bottom;
+         subcontrol-origin: margin;
+         border: 1px solid #5d5a58;
+     border-width: 1px;
+     border-radius: 2px;
+	image: url(:/icons/icons/steam/icon_down_default.tga);
+     }
+
+     QScrollBar::add-line:vertical:hover {
+         background: #64615e;
+         border: 1px solid #64615e;
+     }
+
+
+     QScrollBar::sub-line:vertical {
+         background: #5d5a58;
+         height: 19px;
+         subcontrol-position: top left;
+         subcontrol-origin: margin;
+       border: 1px solid #5d5a58;
+margin:1px 1px 0 0 ; 
+     border-width: 1px;
+     border-radius: 2px;
+	image: url(:/icons/icons/steam/icon_up_default.tga);
+     }
+     QScrollBar::sub-line:vertical:hover {
+         background: #64615e;
+         border: 1px solid #64615e;
+     }
+     QScrollBar:up-arrow:vertical, QScrollBar::down-arrow:vertical {
+         width: 3px;
+         height: 3px;
+     }
+
+     QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+         background: none;
+
+     }
+
+
+
+
+
+
+
+
+
+
+ QPushButton {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(92, 89, 86, 255), stop:1 rgba(64, 59, 60, 255));
+     border-style: solid;
+     border-width: 1px;
+     border-radius: 2px;
+     border-color: rgba(112,109, 105, 255);
+	color: rgb(218, 218, 218);
+	text-align:left;
+	padding-left:5px;
+padding-right:20px;
+	text-transform:uppercase;
+	font: 10px &quot;Arial&quot;;
+height:23px;
+ }
+ QPushButton:hover {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(103,100,97, 255), stop:1 rgba(64, 59, 60, 255));
+     border-color: rgba(153,147,141, 255);
+ }
+ QPushButton:disabled {
+	background-color:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(103,100,97, 255), stop:1 rgba(64, 59, 60, 255));
+     border-color:#666666;
+color:#666666;
+ }
+QLabel#bar{background-color:#6b6865;}
+ QPushButton#btn_close, QPushButton#btn_minimize {
+     border-width: 0px;
+	color: rgb(218, 218, 218);
+	text-align:left;
+	padding-left:0px;
+background:none;
+ }
+
+QMessageBox, QInputDialog {background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(92, 89, 86, 255), stop:1 rgba(64, 59, 60, 255));}
+ QPushButton:pressed {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(56,54,53, 255), stop:1 rgba(73,71,69, 255));
+     border-color: rgba(112,109,105, 255);
+ }
+
+QWidget {color: rgba(209, 207, 205, 255);}
+QWidget:disabled {color: rgba(209, 207, 205, 100);}
+
+QGroupBox {border:none;}
+
+QLineEdit, QTextEdit {
+	background-color: rgba(57,55,54, 255);
+     border-style: solid;
+     border-width: 1px;
+     border-radius: 2px;
+     border-color: rgba(112,109, 105, 255);
+padding-left:5px;
+	color: rgb(218, 218, 218);
+ }
+
+QComboBox {
+     border: 1px solid #807c78;
+     border-radius: 2px;
+     padding: 1px 1px 1px 3px;
+     min-width: 6em;
+ }
+
+ QComboBox:hover {
+
+	background:  #4a4846;
+ }
+ QComboBox:editable {
+
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #5c5956, stop:1 #4a4846);
+ }
+
+ QComboBox:!editable, QComboBox::drop-down:editable {
+
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #5c5956, stop:1 #4a4846);
+ }
+
+ /* QComboBox gets the &quot;on&quot; state when the popup is open */
+ QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #5c5956, stop:1 #4a4846);
+ }
+
+ QComboBox:on { /* shift the text when the popup opens */
+ }
+
+ QComboBox::drop-down {
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 20px;
+	height:15px;
+	margin-top:3px;
+     border-left-width: 1px;
+     border-left-color: #807c78;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 2px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 2px;
+ }
+
+ QComboBox::down-arrow {
+	right: 1px;
+     image: url(:/icons/dropdown.png);
+ }
+
+ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+ }
+
+QComboBox QAbstractItemView {
+	margin-top:1px;
+     border: 1px solid #807c78;
+     border-radius: 2px;
+     background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #5c5956, stop:1 #4a4846);
+ }
+QComboBox QAbstractItem {
+margin:5px;
+ }
+
+
+
+
+
+
+
+
+ QListWidget,QPlainTextEdit, QTreeWidget {
+	background-image: url(:/icons/viewbg.jpg);
+background-repeat:repeat-x;
+/*	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(56,54,53, 255), stop:1 rgba(73,71,69, 255));*/
+     border-style: solid;
+     border-width: 1px;
+     border-radius: 2px;
+     border-color: rgba(112,109, 105, 255);
+	color: rgb(218, 218, 218);
+background-color:#242322;
+background-attachment:fixed;
+ }
+QTreeWidget { 
+
+}
+
+QTabWidget::pane { /* The tab widget frame */
+	border-color: #6b6865; /* same as the pane color */
+	border-top:0px solid;
+
+}
+
+QTabWidget::tab-bar {
+	left: 0px; /* move to the right by 5px */
+}
+
+/* Style the tab using the tab sub-control. Note that it reads QTabBar _not_ QTabWidget */
+QTabBar::tab {
+	background-color:#4a4846;
+	border-bottom-color: #6b6865; /* same as the pane color */
+	border-bottom:0px solid;
+	min-width: 5px;
+	padding: 3px 20px 3px 8px;
+	margin-right:2px;
+	margin-bottom:2px;
+	text-transform:uppercase;
+	font: 10px &quot;Arial&quot;;
+}
+
+QTabBar::tab:hover {
+background-color:#666360;
+}
+
+QTabBar::tab:selected {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(107, 104, 101, 255), stop:1 rgba(56, 54, 53, 255));
+	margin-bottom:0px;
+}
+
+QTabBar::tab:!selected {
+
+}</string>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>39</y>
+      <width>688</width>
+      <height>389</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::North</enum>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Rounded</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="elideMode">
+     <enum>Qt::ElideLeft</enum>
+    </property>
+    <property name="documentMode">
+     <bool>false</bool>
+    </property>
+    <property name="tabsClosable">
+     <bool>false</bool>
+    </property>
+    <property name="movable">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string> NEWS </string>
+     </attribute>
+     <widget class="QTextEdit" name="NewstextEdit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>468</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="lineWrapMode">
+       <enum>QTextEdit::WidgetWidth</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Verdana,Geneva,sans-serif'; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="NewslistWidget">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>10</y>
+        <width>191</width>
+        <height>301</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BTN_RefreshNews">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>320</y>
+        <width>111</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Save Changes</string>
+      </property>
+      <property name="statusTip">
+       <string>Click this button to update any changes you have made to the config</string>
+      </property>
+      <property name="text">
+       <string>Refresh News</string>
+      </property>
+      <property name="autoDefault">
+       <bool>true</bool>
+      </property>
+      <property name="default">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_feedback">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>320</y>
+        <width>111</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Save Changes</string>
+      </property>
+      <property name="statusTip">
+       <string>Click this button to update any changes you have made to the config</string>
+      </property>
+      <property name="text">
+       <string>Give Feedback</string>
+      </property>
+      <property name="autoDefault">
+       <bool>true</bool>
+      </property>
+      <property name="default">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="configTab">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <attribute name="title">
+      <string> CONFIGS </string>
+     </attribute>
+     <attribute name="toolTip">
+      <string>Config Editor</string>
+     </attribute>
+     <widget class="QPushButton" name="BTN_updateCfg">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>320</y>
+        <width>111</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Save Changes</string>
+      </property>
+      <property name="statusTip">
+       <string>Click this button to update any changes you have made to the config</string>
+      </property>
+      <property name="text">
+       <string>Save Changes</string>
+      </property>
+      <property name="shortcut">
+       <string>Ctrl+S</string>
+      </property>
+      <property name="autoDefault">
+       <bool>true</bool>
+      </property>
+      <property name="default">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="cfglist">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>141</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="viewMode">
+       <enum>QListView::ListMode</enum>
+      </property>
+      <property name="uniformItemSizes">
+       <bool>false</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="cfgEdit">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>10</y>
+        <width>521</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Consolas</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="lineWrapMode">
+       <enum>QPlainTextEdit::NoWrap</enum>
+      </property>
+      <property name="plainText">
+       <string/>
+      </property>
+      <property name="overwriteMode">
+       <bool>false</bool>
+      </property>
+      <property name="backgroundVisible">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BTN_cfgadd">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>260</y>
+        <width>141</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Save Changes</string>
+      </property>
+      <property name="statusTip">
+       <string>Click this button to update any changes you have made to the config</string>
+      </property>
+      <property name="text">
+       <string>NEW CONFIG</string>
+      </property>
+      <property name="shortcut">
+       <string>Ctrl+N</string>
+      </property>
+      <property name="autoDefault">
+       <bool>true</bool>
+      </property>
+      <property name="default">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BTN_cfgdel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>290</y>
+        <width>141</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Save Changes</string>
+      </property>
+      <property name="statusTip">
+       <string>Click this button to update any changes you have made to the config</string>
+      </property>
+      <property name="text">
+       <string>DELETE CONFIG</string>
+      </property>
+      <property name="shortcut">
+       <string>Del</string>
+      </property>
+      <property name="autoDefault">
+       <bool>true</bool>
+      </property>
+      <property name="default">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BTN_cfgshare">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>320</y>
+        <width>81</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Save Changes</string>
+      </property>
+      <property name="statusTip">
+       <string>Click this button to update any changes you have made to the config</string>
+      </property>
+      <property name="text">
+       <string>SHARE</string>
+      </property>
+      <property name="icon">
+       <iconset resource="icons.qrc">
+        <normaloff>:/icons/icons/games/iconGroups.png</normaloff>:/icons/icons/games/iconGroups.png</iconset>
+      </property>
+      <property name="shortcut">
+       <string>Ctrl+S</string>
+      </property>
+      <property name="autoDefault">
+       <bool>true</bool>
+      </property>
+      <property name="default">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="demosTab">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <attribute name="title">
+      <string> REPLAYS </string>
+     </attribute>
+     <attribute name="toolTip">
+      <string>Demo Library</string>
+     </attribute>
+     <widget class="QPushButton" name="BTN_viewdemo">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>320</y>
+        <width>91</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>View Demo</string>
+      </property>
+     </widget>
+     <widget class="QTreeWidget" name="treedemos">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>671</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="autoScrollMargin">
+       <number>16</number>
+      </property>
+      <property name="showDropIndicator" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="indentation">
+       <number>0</number>
+      </property>
+      <property name="rootIsDecorated">
+       <bool>false</bool>
+      </property>
+      <property name="uniformRowHeights">
+       <bool>true</bool>
+      </property>
+      <property name="itemsExpandable">
+       <bool>false</bool>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="animated">
+       <bool>true</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+      <property name="columnCount">
+       <number>8</number>
+      </property>
+      <attribute name="headerMinimumSectionSize">
+       <number>20</number>
+      </attribute>
+      <attribute name="headerShowSortIndicator" stdset="0">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="headerStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Date</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Filename</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Map</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Length</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Player</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Server</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Size</string>
+       </property>
+      </column>
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="textAlignment">
+        <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="tick">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>320</y>
+        <width>111</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="frame">
+       <bool>true</bool>
+      </property>
+      <property name="dragEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="placeholderText">
+       <string>Tick</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="skinsTab">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <attribute name="title">
+      <string> DOWNLOADS </string>
+     </attribute>
+     <attribute name="toolTip">
+      <string>GUI Tools</string>
+     </attribute>
+     <widget class="QPushButton" name="BTN_skinFolder">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>320</y>
+        <width>141</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Open the skins folder in Explorer</string>
+      </property>
+      <property name="statusTip">
+       <string>Open the skins folder in Explorer</string>
+      </property>
+      <property name="text">
+       <string>Open Downloads</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/icons/icons/folders_explorer.png</normaloff>:/icons/icons/folders_explorer.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_OpenGameFolder">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>320</y>
+        <width>141</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Open your game folder in explorer</string>
+      </property>
+      <property name="statusTip">
+       <string>Open your game folder in explorer</string>
+      </property>
+      <property name="text">
+       <string>Open Game Folder</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/icons/icons/folder.png</normaloff>:/icons/icons/folder.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BTN_uninstallSkin">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>290</y>
+        <width>101</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Remove the current skin</string>
+      </property>
+      <property name="statusTip">
+       <string>Remove the current skin</string>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Remove</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BTN_installSkin">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>260</y>
+        <width>101</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Click to install the selected skin</string>
+      </property>
+      <property name="statusTip">
+       <string>Click to install the selected skin</string>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Install</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="dltypelist">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>101</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Configs</string>
+       </property>
+       <property name="icon">
+        <iconset resource="icons.qrc">
+         <normaloff>:/icons/icons/games/iconWishlist.png</normaloff>:/icons/icons/games/iconWishlist.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Demos</string>
+       </property>
+       <property name="icon">
+        <iconset resource="icons.qrc">
+         <normaloff>:/icons/icons/games/iconVideo.png</normaloff>:/icons/icons/games/iconVideo.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Maps</string>
+       </property>
+       <property name="icon">
+        <iconset resource="icons.qrc">
+         <normaloff>:/icons/icons/games/iconInventory.png</normaloff>:/icons/icons/games/iconInventory.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Skins</string>
+       </property>
+       <property name="icon">
+        <iconset resource="icons.qrc">
+         <normaloff>:/icons/icons/games/iconGroups.png</normaloff>:/icons/icons/games/iconGroups.png</iconset>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="btn_dldownload">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>190</y>
+        <width>101</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Click to install the selected skin</string>
+      </property>
+      <property name="statusTip">
+       <string>Click to install the selected skin</string>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>DOWNLOAD</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_dlupdate">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>101</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Click to install the selected skin</string>
+      </property>
+      <property name="statusTip">
+       <string>Click to install the selected skin</string>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>UPDATE</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QTreeWidget" name="treeDownloads">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>10</y>
+        <width>561</width>
+        <height>271</height>
+       </rect>
+      </property>
+      <property name="autoScrollMargin">
+       <number>16</number>
+      </property>
+      <property name="showDropIndicator" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="indentation">
+       <number>0</number>
+      </property>
+      <property name="rootIsDecorated">
+       <bool>false</bool>
+      </property>
+      <property name="uniformRowHeights">
+       <bool>true</bool>
+      </property>
+      <property name="itemsExpandable">
+       <bool>false</bool>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="animated">
+       <bool>false</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+      <property name="expandsOnDoubleClick">
+       <bool>true</bool>
+      </property>
+      <property name="columnCount">
+       <number>0</number>
+      </property>
+      <attribute name="headerCascadingSectionResizes">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="headerMinimumSectionSize">
+       <number>20</number>
+      </attribute>
+      <attribute name="headerShowSortIndicator" stdset="0">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="headerStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+     </widget>
+     <widget class="QProgressBar" name="DownloadProgressBar">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>290</y>
+        <width>561</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="textVisible">
+       <bool>true</bool>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="invertedAppearance">
+       <bool>false</bool>
+      </property>
+      <property name="format">
+       <string>%p%</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="toolsTab">
+     <attribute name="title">
+      <string> TOOLS </string>
+     </attribute>
+     <widget class="QGroupBox" name="SteamTools">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>191</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Steam and Player Settings</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <widget class="QPushButton" name="ToolButton_DeleteClientReg">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>191</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Delete ClientRegistry.blob</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ToolButton_ChangeName">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>191</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Change Steam Name</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ToolButton_EditProfile">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>80</y>
+         <width>190</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Upload New Profile Picture</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GameTools">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>10</y>
+        <width>161</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Game Specific Tools</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <widget class="QPushButton" name="ToolButton_Validate">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>110</y>
+         <width>151</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Validate Game Files</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ToolButton_BackupGame">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>151</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Backup Game Files</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ToolButton_ReadUpdates">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>151</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Read Updates News</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ToolButton_Defrag">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>80</y>
+         <width>151</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Defrag Game Files</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="BroadcastersTools">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>10</y>
+        <width>271</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Broadcasting Tools</string>
+      </property>
+      <widget class="QPushButton" name="BTN_updateTeams">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>260</y>
+         <width>121</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Apply</string>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="BTN_refreshteams">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>251</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Retrieve Data</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="BTN_swapSides">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>260</y>
+         <width>121</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Swap Teams</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="Box_t1name">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>251</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="statusTip">
+        <string>Enter the Counter-Terrorist team name</string>
+       </property>
+       <property name="whatsThis">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>Home Team Name</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="Box_t1url">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>251</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="statusTip">
+        <string>Enter the text you want under the team name</string>
+       </property>
+       <property name="placeholderText">
+        <string>Home Team URL</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_t1flag">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>251</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="frame">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="Box_t2name">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>170</y>
+         <width>251</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="statusTip">
+        <string>Enter the Terrorist team name</string>
+       </property>
+       <property name="placeholderText">
+        <string>Away Team Name</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="Box_t2url">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>200</y>
+         <width>251</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="statusTip">
+        <string>Enter the text you want under the team name</string>
+       </property>
+       <property name="placeholderText">
+        <string>Away Team URL</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_t2flag">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>230</y>
+         <width>251</width>
+         <height>23</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="Border">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>15</y>
+        <width>1</width>
+        <height>290</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="icons.qrc">:/icons/linebg.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="SteamIDTools">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>130</y>
+        <width>191</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Steam ID Tools</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <widget class="QPushButton" name="ToolButton_URLtoSID">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>80</y>
+         <width>191</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Convert URL to Steam ID</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ToolButton_SIDtoURL">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>191</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Convert Steam ID to URL</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="steamidtool">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>191</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="statusTip">
+        <string>Enter the Terrorist team name</string>
+       </property>
+       <property name="placeholderText">
+        <string>Paste ID/URL</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ToolButton_AddFriend">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>110</y>
+         <width>191</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Add to steam friends</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ToolButton_SendMessage">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>140</y>
+         <width>191</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Send a message</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="FriendsTools">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>160</y>
+        <width>161</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Steam Friends Status</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <widget class="QPushButton" name="ToolButton_FriendsOffline">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>110</y>
+         <width>151</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Offline</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ToolButton_FriendsAway">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>151</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Away</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ToolButton_FriendsOnline">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>151</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Online</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ToolButton_FriendsBusy">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>80</y>
+         <width>151</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Busy</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="Border_2">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>15</y>
+        <width>1</width>
+        <height>290</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="icons.qrc">:/icons/linebg.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabSettings">
+     <attribute name="title">
+      <string> SETTINGS </string>
+     </attribute>
+     <attribute name="toolTip">
+      <string>Settings</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>360</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Steam Account</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <widget class="QLineEdit" name="cstrikepath_input">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>261</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="frame">
+        <bool>true</bool>
+       </property>
+       <property name="dragEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="placeholderText">
+        <string>Path to steam account</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="BTN_cstrikepath">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>20</y>
+         <width>81</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>GET PATH</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>671</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Play Game Launch Options</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <widget class="QLineEdit" name="gameoptions">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>671</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="frame">
+        <bool>true</bool>
+       </property>
+       <property name="dragEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="placeholderText">
+        <string>e.g. -freq 120 -w 800 -h 600 -novid -dxlevel 81 +fps_max 240</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>671</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>View Demo Launch Options</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <widget class="QLineEdit" name="demooptions">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>671</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="frame">
+        <bool>true</bool>
+       </property>
+       <property name="dragEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="placeholderText">
+        <string>e.g. -novid -sw +fps_max 240 -w 800 -h 600</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_5">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>10</y>
+        <width>311</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Steam ID</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <widget class="QLineEdit" name="steamid">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>151</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>This is the name that will appear when you upload configs/demos</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="frame">
+        <bool>true</bool>
+       </property>
+       <property name="dragEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="placeholderText">
+        <string>e.g. STEAM_0:0:26262312</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="CopySteamIDToClipbaord">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>20</y>
+         <width>141</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Copy to Clipboard</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="BTN_UpdateSettings">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>320</y>
+        <width>111</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save changes</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QComboBox" name="game">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>380</y>
+      <width>211</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="toolTip">
+     <string>Choose the game you want to edit from this drop down menu</string>
+    </property>
+    <property name="statusTip">
+     <string>Choose the game you want to edit from this drop down menu</string>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <item>
+     <property name="text">
+      <string>Counter-Strike: Source</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normalon>:/icons/icons/games/css.jpg</normalon>
+      </iconset>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Counter-Strike: Global Offensive</string>
+     </property>
+     <property name="icon">
+      <iconset resource="icons.qrc">
+       <normaloff>:/icons/icons/games/csgo.jpg</normaloff>
+       <normalon>:/icons/icons/games/csgo.jpg</normalon>:/icons/icons/games/csgo.jpg</iconset>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Team Fortress 2</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normalon>:/icons/icons/games/tf2.jpg</normalon>
+      </iconset>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Half-Life 2: Deathmatch</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normalon>:/icons/icons/games/hl2dm.jpg</normalon>
+      </iconset>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Counter-Strike</string>
+     </property>
+     <property name="icon">
+      <iconset resource="icons.qrc">
+       <normaloff>:/icons/icons/games/cs.jpg</normaloff>
+       <normalon>:/icons/icons/games/cs.jpg</normalon>:/icons/icons/games/cs.jpg</iconset>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Dota 2 Beta</string>
+     </property>
+     <property name="icon">
+      <iconset resource="icons.qrc">
+       <normaloff>:/icons/icons/games/dota2.jpg</normaloff>
+       <normalon>:/icons/icons/games/dota2.jpg</normalon>:/icons/icons/games/dota2.jpg</iconset>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Left 4 Dead 2</string>
+     </property>
+     <property name="icon">
+      <iconset resource="icons.qrc">
+       <normaloff>:/icons/icons/games/l4d2.jpg</normaloff>:/icons/icons/games/l4d2.jpg</iconset>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="BGIMG">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>710</width>
+      <height>440</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="icons.qrc">:/icons/testbg.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="apptitle">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>9</y>
+      <width>581</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>apptitle</string>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <property name="indent">
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_close">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>14</y>
+      <width>15</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icons.qrc">
+      <normaloff>:/icons/icons/steam/win32_win_close.tga</normaloff>:/icons/icons/steam/win32_win_close.tga</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>15</width>
+      <height>15</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_minimize">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>14</y>
+      <width>15</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icons.qrc">
+      <normaloff>:/icons/icons/steam/win32_win_min.tga</normaloff>:/icons/icons/steam/win32_win_min.tga</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>15</width>
+      <height>15</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="launchgame">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>380</y>
+      <width>81</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Save Changes</string>
+    </property>
+    <property name="statusTip">
+     <string>Click this button to update any changes you have made to the config</string>
+    </property>
+    <property name="text">
+     <string>PLAY</string>
+    </property>
+    <property name="icon">
+     <iconset resource="icons.qrc">
+      <normaloff>:/icons/icons/games/iconGames.png</normaloff>:/icons/icons/games/iconGames.png</iconset>
+    </property>
+    <property name="autoDefault">
+     <bool>true</bool>
+    </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>BGIMG</zorder>
+   <zorder>tabWidget</zorder>
+   <zorder>game</zorder>
+   <zorder>apptitle</zorder>
+   <zorder>launchgame</zorder>
+   <zorder>btn_close</zorder>
+   <zorder>btn_minimize</zorder>
+  </widget>
+  <action name="actionConfig_Editor">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/axialis.16/Png/16x16/Write2.png</normaloff>:/axialis.16/Png/16x16/Write2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Config Editor</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+1</string>
+   </property>
+  </action>
+  <action name="actionDemo_Library">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/axialis.16/Png/16x16/Database.png</normaloff>:/axialis.16/Png/16x16/Database.png</iconset>
+   </property>
+   <property name="text">
+    <string>Demo Library</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+2</string>
+   </property>
+  </action>
+  <action name="actionGUI_Tool">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/axialis.16/Png/16x16/Podcast.png</normaloff>:/axialis.16/Png/16x16/Podcast.png</iconset>
+   </property>
+   <property name="text">
+    <string>GUI Tool</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+3</string>
+   </property>
+  </action>
+  <action name="actionShoutcasters_Tool">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/axialis.16/Png/16x16/Text Large.png</normaloff>:/axialis.16/Png/16x16/Text Large.png</iconset>
+   </property>
+   <property name="text">
+    <string>Shoutcasters Tool</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+4</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/axialis.cyan.16/Png/Cyan/16x16/Tool.png</normaloff>:/axialis.cyan.16/Png/Cyan/16x16/Tool.png</iconset>
+   </property>
+   <property name="text">
+    <string>Settings</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+,</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WindowShortcut</enum>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionDelete_Settings">
+   <property name="text">
+    <string>Delete Settings</string>
+   </property>
+  </action>
+  <action name="actionNew_Config">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/16/icons/16/script_add.png</normaloff>:/16/icons/16/script_add.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Config</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WindowShortcut</enum>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionDelete_Config">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/16/icons/16/script_delete.png</normaloff>:/16/icons/16/script_delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete Config</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WindowShortcut</enum>
+   </property>
+  </action>
+  <action name="actionSave_Config">
+   <property name="text">
+    <string>Save Config</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionView_Changelog">
+   <property name="text">
+    <string>Changelog</string>
+   </property>
+  </action>
+  <action name="actionAdd_to_Steam">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/16/icons/16/steam_icon - add.png</normaloff>:/16/icons/16/steam_icon - add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add to Steam</string>
+   </property>
+  </action>
+  <action name="actionView_Steam_Profile">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/16/icons/16/steam_icon.png</normaloff>:/16/icons/16/steam_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>View Steam Profile</string>
+   </property>
+  </action>
+  <action name="actionYouTube">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/16/icons/16/youtube.png</normaloff>:/16/icons/16/youtube.png</iconset>
+   </property>
+   <property name="text">
+    <string>YouTube</string>
+   </property>
+  </action>
+  <action name="actionTumblr">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/16/icons/16/tumblr.png</normaloff>:/16/icons/16/tumblr.png</iconset>
+   </property>
+   <property name="text">
+    <string>tumblr</string>
+   </property>
+  </action>
+  <action name="actionTwitter">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/16/icons/16/twitter_1.png</normaloff>:/16/icons/16/twitter_1.png</iconset>
+   </property>
+   <property name="text">
+    <string>twitter</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
+ <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>10</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>

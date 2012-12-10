@@ -1,0 +1,40 @@
+// Netcode Illuminati Gui
+// Created by Ethos_
+// Last Modified                               _____________
+//___________________________________________.(º 9/20/2011 º)
+//¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+// Credit: Idea for commands list came from KLUTCH and the Hyphen Gui.
+
+clear
+echo "[========================================]"
+echo "	 	    - Netcode Illuminati -"
+echo "		-[ CONSOLE COMMANDS ]-"
+echo "[========================================]"
+echo "	Command				Action"
+echo "[========================================]"
+echo "	fps			Exec FPS Settings Config"
+echo ""
+echo "	netcode		Exec Netcode Settings Config"
+echo ""
+echo "	dazed		Exec Dazed Player Config"
+echo ""
+echo "	frozt			Exec Frozt Player Config"
+echo ""
+echo "	steel			Exec Steel Player Config"
+echo ""
+echo "	tck			Exec Tck Player Config"
+echo ""
+echo "	dust2 		Changes Map to de_dust2"
+echo "	nuke 		Changes Map to de_nuke"
+echo "	inferno 		Changes Map to de_inferno"
+echo "	mill 			Changes Map to de_cpl_mill"
+echo "	fire 			Changes Map to de_cpl_fire"
+echo "	strike 		Changes Map to de_cpl_strike"
+echo "	russka 		Changes Map to de_russka"
+echo "	contra 		Changes Map to de_contra"
+echo "	train 			Changes Map to de_train"
+echo "	tuscan 		Changes Map to de_tuscan"
+echo ""
+echo "	ncidm 		Connect to NCI 24/7 Dust2 DeathMatch"
+echo "[========================================]"
+echo ""

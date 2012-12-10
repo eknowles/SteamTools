@@ -1,0 +1,53 @@
+cl_interp_ratio 1
+cl_interp 0.015152
+cl_minmodels 1
+fps_max 101
+cl_cmdrate "66"
+cl_updaterate "66"
+cl_phys_props_enable 0
+cl_ragdoll_physics_enable 0
+cl_wpn_sway_interp 0
+muzzleflash_light 0
+rate "30000"
+hud_fastswitch 1
+cl_smooth "0"
+bind "f12" "rcon_password lolmerl"
+bind "f11" "rcon exec pregame"
+cl_smoothtime "0.01"
+mat_queue_mode "2"
+cl_crosshairsize 2
+cl_crosshaircolor 5
+cl_crosshaircolor_r 255
+cl_crosshaircolor_g 0
+cl_crosshaircolor_b 255
+
+
+
+
+
+
+
+
+bind "0" "slot4"
+bind "1" "slot1"
+bind "2" "slot2"
+bind "3" "use weapon_knife"
+bind "4" "use weapon_hegrenade"
+bind "5" "use weapon_flashbang"
+bind "6" "use weapon_c4"
+bind "9" "slot3"
+bind "f" "use weapon_smokegrenade"
+bind "KP_INS" "buy hegrenade"
+bind "KP_END" "buy deagle"
+bind "KP_DOWNARROW" "buy usp"
+bind "KP_LEFTARROW" "buy vesthelm"
+bind "KP_5" "buy vest"
+bind "KP_HOME" "buy ak47; buy m4a1"
+bind "KP_UPARROW" "buy awp"
+bind "KP_PGUP" "buy famas; buy galil"
+bind "KP_PLUS" "buy defuser"
+bind "KP_ENTER" "buy smokegrenade"
+bind "KP_DEL" "buy flashbang"
+
+clear
+echo "Tck UserConfig Has Been Executed..."

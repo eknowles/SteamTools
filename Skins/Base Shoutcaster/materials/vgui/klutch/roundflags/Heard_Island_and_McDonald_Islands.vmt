@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/klutch/flags/Heard_Island_and_McDonald_Islands"
+	"$vertexcolor" 1
+	"$vertexalpha" 1
+	"$translucent" 1
+}

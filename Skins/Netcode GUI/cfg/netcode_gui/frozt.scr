@@ -1,0 +1,190 @@
+//FPS Config
+//----------------------
+//Email all questions or concerns to MStevens@cevolved.com
+
+clear
+
+echo "***********************"
+echo ""
+echo ""
+echo "" 
+echo "***********************"
+
+
+// FPS Settings
+// ----------------
+
+	
+//Cl_ Commands
+cl_cmdrate "101"			// Must be set to 100/101
+cl_drawmonitors "0"			// changeable
+cl_ejectbrass "0"			// changeable
+cl_forcepreload "1"			// changeable
+cl_interp "0.01"			// Must be set to .01
+cl_interpolate "1"			// Must be set to 1
+cl_lagcomp_errorcheck "1"		// changeable
+cl_lagcompensation "1"			// changeable
+cl_minmodels "1"			// changeable
+cl_min_ct "1"				// changeable
+cl_min_t "1"				// changeable
+cl_predictweapons "1"			// changeable
+cl_pred_optimize "2"			// changeable
+cl_ejectbrass 0 // _disables shells flying out of guns_
+cl_forcepreload 1
+cl_phys_props_max 0 // _disables trash and cans etc_
+cl_crosshairusealpha 0
+cl_phys_props_max "50"			// Must be set to 50+
+cl_ragdoll_physics_enable "0"		// changeable
+cl_ragdoll_collide "0"			// changeable
+cl_smooth "1"				// changeable
+cl_smoothtime "0.01"			// changeable
+cl_updaterate "101"			// Must be set to 100/101
+
+
+//Mat_ commands
+
+mat_bloomscale "0"			// changeable
+mat_bumpmap "0"				// changeable
+mat_clipz "1"				// changeable
+mat_colorcorrection "0"			// changeable
+mat_compressedtextures "1"		// changeable
+//mat_debug				// Illegal
+mat_debugdepthmode "0"			// Must be set to 0
+mat_debugdepthval "128"			// Must be set to 128
+mat_debugdepthvalmax "256"		// Must be set to 256
+mat_disable_bloom "1"			// changeable
+//mat_dxlevel 81			// Must be set to 81 or higher
+mat_filterlightmaps "1"			// changeable
+mat_forcehardwaresync "0"		// changeable
+mat_hdr_enabled "0"			// changeable
+mat_clipz 0 // _lowers water quality_
+mat_fastnobump 1 // _faster bump mapping_
+mat_fastspecular 1 // _fast specular lighting_
+mat_hdr_enabled 0 // _disables high dynamic range lighting_
+mat_picmip 2 // _lower texture quality--set between 0 and 2_
+mat_specular 0 // _disables specular lighting_
+mat_trilinear 0 // _disables trilinear filtering_
+mat_wateroverlaysize 16 // _lowers water quality_
+mat_vsync 0 // _disables vertical synchronization_
+mat_parallaxmap "0"			// changeable
+mat_picmip "0"				// Must not be higher than 2
+mat_reducefillrate "1"			// changeable
+mat_specular "0"			// changeable
+mat_vsync "0"				// changeable
+mat_monitorgamma 1.6         // _maximum ingame brightness_
+
+
+//R_ Commands
+
+r_decals "0"				// changeable
+r_decal_cullsize "0"			// changeable
+r_dopixelvisibility "0"			// changeable
+r_drawflecks "0"			// changeable
+r_drawmodeldecals "0"			// changeable
+r_dynamic "0"				// changeable
+r_eyes "0"				// changeable
+r_flex "0"				// changeable
+r_lightaverage "1"			// Must be set to 1
+r_lod "2"				// Must be set to -1/0/1/2
+r_maxdlights "32"			// Must be set to 32
+r_occlusion "1"				// changeable
+r_renderoverlayfragment "0"		// changeable
+r_cheapwaterend 1 // _worse water rendering_
+r_cheapwaterstart 1 // _worse water rendering_
+r_decal_cullsize 2 // _lower texture quality at distance_
+r_decals 300 // _disables player sprays_
+r_drawflecks 0// _disables bullet impacts_
+r_drawmodeldecals 0 // _disables decals on models_
+r_dynamic 0
+r_eyes 0 // _removes eyes from player models_
+r_lightaverage 0 // _disables average lighting_
+r_lod 2 // _adjusts model quality--set between -5 and 5_
+r_occlusion 0 // _disables occlusion--lowers image quality but gains FPS_
+r_renderoverlayfragment 0
+r_rootlod 2 // _lower overall game detail level_
+r_shadows 1 // _set to 0 to disable shadows (not recommended)_
+r_teeth 0 // _removes teeth from player models_
+r_waterforceexpensive 0 // _disables high-quality water_
+r_rootlod "2"				// Must be set to 0/1/2
+r_shadows "1"				// changeable
+r_shadowmaxrendered "1"			// changeable
+r_shadowrendertotexture "1"		// changeable
+r_teeth "0"				// changeable
+r_waterforceexpensive "0"		// changeable
+r_waterdrawreflection "0"		// changeable
+r_worldlights "2"			// Must be set to 2
+r_worldlightmin "0.0002"		// Must be set to .0002
+
+r_3dnow "1"				// changeable
+r_mmx "1"				// changeable
+r_sse "1"				// changeable
+r_sse2 "1"				// changeable
+r_3dsky 0				// changeable
+
+//Rope_
+
+rope_averagelight "0"			// changeable
+rope_collide "0"			// changeable
+rope_shake "0"				// changeable
+rope_smooth "0"				// changeable
+rope_smooth_minwidth "0"		// changeable
+rope_smooth_minalpha "0"		// changeable
+rope_smooth_maxalphawidth "0"		// changeable
+rope_smooth_maxalpha "0"		// changeable
+rope_averagelight 0 // _disables average lighting on ropes_
+rope_smooth 0 // _disables antialiasing on ropes_
+rope_subdiv 0
+rope_wind_dist 0 // _disables wind effects on ropes_
+rope_smooth_enlarge "0"			// changeable
+rope_subdiv "0"				// changeable
+
+
+//Miscellaneous
+
+//+showbudget				// Illegal
+//+showbudget_texture			// Illegal
+//+showbudget_texture_global		// Illegal
+//flush					// Illegal
+//flush_locked				// Illegal
+//fps_max "100"				// changeable
+func_break_max_pieces "0"		// changeable
+gl_clear "0"				// changeable
+jpeg_quality "100"			// Must be set to 100
+mp_decals "0"				// changeable
+net_showevents "0"			// Must be set to 0
+props_break_max_pieces "0"		// changeable
+props_break_max_pieces_perframe "0"	// changeable
+rate "25000"				// Must be set to 25000+
+snd_flushasync				
+texture_budget_background_alpha "999	// changeable
+texture_budget_panel_height "0"		// changeable
+texture_budget_panel_width "0"		// changeable
+//timerefresh				// Illegal
+voice_enable "1"			// changeable
+voice_scale "1"				// changeable
+voice_modenable "1"			// changeable
+violence_agibs "1"			// changeable
+violence_hgibs "1"			// changeable
+violence_hblood "1"			// changeable
+violence_ablood "1"			// changeable
+//wait					// Illegal
+
+
+mat_picmip "2"
+r_lod "2"
+r_rootlod "2"
+
+//Nonspecfic cl_ 
+cl_allowdownload "0" 
+cl_allowupload "0" 
+cl_autohelp "0"
+cl_autowepswitch "0" 
+cl_c4dynamiclight "0"
+cl_forcepreload "1"
+cl_phys_props_enable "0"
+
+mp_decals 50 // _how many bullets etc will be shown_
+muzzleflash_light 0 // _disables muzzleflash_
+
+clear
+echo "Frozt UserConfig Has Been Executed..."

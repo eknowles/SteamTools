@@ -1,0 +1,1 @@
+pyuic4 splash.ui -o splashUi.py

@@ -1,0 +1,303 @@
+// NOTE:  THIS FILE IS AUTOMATICALLY REGENERATED, 
+//DO NOT EDIT THIS HEADER, YOUR COMMENTS WILL BE LOST IF YOU DO
+// User options script
+//
+// Format:
+//  Version [float]
+//  Options description followed by 
+//  Options defaults
+//
+// Option description syntax:
+//
+//  "cvar" { "Prompt" { type [ type info ] } { default } }
+//
+//  type = 
+//   BOOL   (a yes/no toggle)
+//   STRING
+//   NUMBER
+//   LIST
+//
+// type info:
+// BOOL                 no type info
+// NUMBER       min max range, use -1 -1 for no limits
+// STRING       no type info
+// LIST          delimited list of options value pairs
+//
+//
+// default depends on type
+// BOOL is "0" or "1"
+// NUMBER is "value"
+// STRING is "value"
+// LIST is "index", where index "0" is the first element of the list
+
+
+// Half-Life User Info Configuration Layout Script (stores last settings chosen, too)
+// File generated:  Sat Jul 16 00:04:34 AM
+//
+//
+// Cvar	-	Setting
+
+//
+// Netcode Illuminati Gui
+// Created by Ethos_
+// Last Modified                               _____________
+//___________________________________________.(º 9/20/2011 º)
+//¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+
+VERSION 1.0
+
+DESCRIPTION INFO_OPTIONS
+{
+	"mp_decals"
+	{
+		"#Valve_Multiplayer_Decal_Limit"
+		{ NUMBER 0 4096 }
+		{ "200" }
+	}
+
+	"cl_righthand"
+	{
+		"#Cstrike_Weapon_Alignment"
+		{
+			LIST
+			"#Cstrike_Left_Handed" "0"
+			"#Cstrike_Right_Handed" "1"
+		}
+		{ "1" }
+	}
+
+	"cl_clanid"
+	{
+		"Clan Tag"
+		{
+			LIST
+			"#Cstrike_ClanTag_None" "0"
+		}
+		{ "0" }
+	}
+
+	"cl_autowepswitch"
+	{
+		"#Cstrike_Automatic_Weapon_Switch"
+		{ BOOL }
+		{ "0" }
+	}
+
+	"hud_centerid"
+	{
+		"#Valve_Center_Player_Names"
+		{ BOOL }
+		{ "1" }
+	}
+
+	"cl_autohelp"
+	{
+		"#Cstrike_AutoHelp"
+		{ BOOL }
+		{ "0" }
+	}
+
+	"cl_c4progressbar"
+	{
+		"#Cstrike_C4ProgressBar"
+		{ BOOL }
+		{ "1" }
+	}
+
+	"hud_takesshots"
+	{
+		"#game_takesshots"
+		{ BOOL }
+		{ "0" }
+	}
+
+	"cl_disablefreezecam"
+	{
+		"#Cstrike_Disable_Freeze_Cam"
+		{ BOOL }
+		{ "1" }
+	}
+
+	"cl_disablehtmlmotd"
+	{
+		"#Valve_DisableHTMLMOTD"
+		{ BOOL }
+		{ "1" }
+	}
+
+	"cl_cloud_settings"
+	{
+		"#Valve_UseSteamCloud"
+		{ BOOL }
+		{ "1" }
+	}
+	
+	cl_hudhint_sound
+	{
+		"Enable HudHint Sound"
+		{ BOOL }
+		{ "1" }
+	}
+	
+	"cl_nowinpanel"
+	{
+		"Disable Winner Panel (Winning Team, MVP, and Fun Facts)"
+		{ BOOL }
+		{ "1" }
+	}
+	
+	"rate"
+	{
+		"Rate"
+		{ NUMBER 10000 1048576 }
+		{ "1048576" }
+	}
+
+	"cl_updaterate"
+	{
+		"Update Rate"
+		{ NUMBER 20 101 }
+		{ "67" }
+	}
+
+	"cl_cmdrate"
+	{
+		"Command Rate"
+		{ NUMBER 30 101 }
+		{ "67" }
+	}
+	
+	"cl_interp"
+	{
+		"Interp"
+		{ NUMBER 0 0.5 }
+		{ "0.01" }
+	}
+
+	"cl_interp_ratio"
+	{
+		"Interp Ratio"
+		{ NUMBER 0 2 }
+		{ "1" }
+	}
+
+	"cl_minmodels"
+	{
+		"Enable MinModels"
+		{ BOOL }
+		{ "1" }
+	}
+
+	"cl_min_t"
+	{
+		"Terrorist Model"
+		{
+			LIST
+			" " "1"
+			"Phoenix Connexion" "1"
+			"Elite Crew" "2"
+			"Arctic Avengers" "3"
+			"Guerilla Warfare" "4"
+		}
+		{ "4" }
+	}
+
+	"cl_min_ct"
+	{
+		"Counter-Terrorist Model"
+		{
+			LIST
+			" " "1"
+			"Seal_Team_6" "1"
+			"GSG-9" "2"
+			"SAS" "3"
+			"GIGN" "4"
+		}
+		{ "2" }
+	}
+	
+	"cl_legacy_crosshair_scale"
+	{
+		"Enable Legacy CrosshairScale"
+		{ BOOL }
+		{ "1" }
+	}
+
+	"cl_legacy_crosshair_recoil"
+	{
+		"Enable Legacy Recoil"
+		{ BOOL }
+		{ "1" }
+	}
+
+	"zoom_sensitivity_ratio"
+	{
+		"Zoom Sensitivity"
+		{ NUMBER 0 20 }
+		{ "1" }
+	}
+	
+	"cl_crosshairscale"
+	{
+		"Crosshair Scale"
+		{ NUMBER 0 100000 }
+		{ "3500" }
+	}
+
+	"cl_phys_props_enable"
+	{
+		"Enable Physics Props"
+		{ BOOL }
+		{ "0" }
+	}
+		
+	"cl_phys_props_max"
+	{
+		"Physics Props Max"
+		{ NUMBER 0 400 }
+		{ "0" }
+	}
+
+	"r_3dsky"
+	{
+		"Enable 3D Sky"
+		{ BOOL }
+		{ "0" }
+	}
+
+	"cl_ragdoll_physics_enable"
+	{
+		"Ragdolls"
+		{ BOOL }
+		{ "0" }
+	}
+	
+	"fps_max"
+	{
+		"FPS Max"
+		{ NUMBER 0 10000 }
+		{ "9999" }
+	}
+	
+	"net_graph"
+	{
+		"NetGraph"
+		{ BOOL }
+		{ "1" }
+	}
+	
+	"net_graphpos"
+	{
+		"Net Graph Position"
+		{
+			LIST
+			" " "0"
+			"Off" "0"
+			"Right" "1"
+			"Center" "2"
+			"Left" "3"
+		}
+		{ "1" }
+	}
+
+}

@@ -1,0 +1,25 @@
+// Netcode Illuminati Gui
+// Created by Ethos_
+// Last Modified                               _____________
+//___________________________________________.(º 9/20/2011 º)
+//¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+alias "fps" "exec netcode_gui/fps.scr"
+alias "netcode" "exec netcode_gui/netcode.scr"
+alias "steel" "exec netcode_gui/steel.scr"
+alias "frozt" "exec netcode_gui/frozt.scr"
+alias "dazed" "exec netcode_gui/dazed.scr"
+alias "tck" "exec netcode_gui/tck.scr"
+alias "ncidm" "connect ncidm.eoreality.net:27015"
+alias "ncigui" "exec netcode_gui/commands.scr
+
+alias d2 "rcon changelevel de_dust2";
+alias mill "rcon changelevel de_cpl_mill";
+alias train "rcon changelevel de_train";
+alias inferno "rcon changelevel de_inferno";
+alias strike "rcon changelevel de_cpl_strike";
+alias season "rcon changelevel de_season";
+alias russka "rcon changelevel de_russka";
+alias fire "rcon changelevel de_cpl_fire";
+alias contra "rcon changelevel de_contra";
+alias nuke "rcon changelevel de_nuke";
+alias tuscan "rcon changelevel de_tuscan";

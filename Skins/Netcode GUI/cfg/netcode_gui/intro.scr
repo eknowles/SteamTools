@@ -1,0 +1,22 @@
+// Netcode Illuminati Gui
+// Created by Ethos_
+// Last Modified                               _____________
+//___________________________________________.(º 9/20/2011 º)
+//¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+// Credit: Idea from KLUTCH's Hyphen Gui opening screen
+echo ""
+echo "[======================================]"
+echo ""
+echo "			    Netcode Illuminati"
+echo "			   Official Netcode GUI"
+echo ""
+echo "Type "ncigui" in console to see a list of available commands"
+echo ""
+echo "		      www.NetcodeSource.com"
+echo "                                         "
+echo "[======================================]"
+echo ""
+echo "	    Team Netcode powered by EOReality.net"
+echo ""
+echo ""
+echo ""

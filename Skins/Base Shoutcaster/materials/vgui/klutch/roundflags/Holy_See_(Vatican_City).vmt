@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/klutch/flags/Holy_See_(Vatican_City)"
+	"$vertexcolor" 1
+	"$vertexalpha" 1
+	"$translucent" 1
+}

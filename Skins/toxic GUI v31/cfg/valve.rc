@@ -1,0 +1,19 @@
+// load the base configuration
+//exec default.cfg
+r_decal_cullsize 1
+
+// Setup custom controller
+exec joystick.cfg
+
+// run a user script file if present
+exec autoexec.cfg
+
+//
+// stuff command line statements
+//
+stuffcmds
+
+clear
+exec KLUTCH.cfg
+bind "ENTER" "exec KLUTCH.cfg"
+clear

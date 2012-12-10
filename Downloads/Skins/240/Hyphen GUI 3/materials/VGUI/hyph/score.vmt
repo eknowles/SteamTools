@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	"$basetexture" "VGUI/hyph/score"
+	"$translucent" 1
+	$gammacolorread 1
+	$linearwrite 1
+	$alpha .9
+}

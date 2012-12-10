@@ -1,0 +1,27 @@
+//             ______________________
+//___________.( h0lmGUI™v4.1 by h0lm ).___________
+//¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+"chapters"
+{
+	1	"background01"
+	2	"background02"
+	3	"background03"
+	4	"background04"
+	5	"background05"
+	6	"background06"
+	7	"background07"
+}
+
+"BackgroundMaps"
+{
+	1	"background01"
+	2	"background02"
+	3	"background03"
+	4	"background04"
+	5	"background05"
+	6	"background06"
+	7	"background07"
+}
+//________________________________________________
+//¯¯¯¯¯¯¯¯¯¯¯'( h0lmGUI™v4.1 by h0lm )'¯¯¯¯¯¯¯¯¯¯¯
+//             ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯

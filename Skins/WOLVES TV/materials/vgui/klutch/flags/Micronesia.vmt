@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/klutch/flags/Micronesia"
+	"$vertexcolor" 1
+	"$vertexalpha" 1
+	"$translucent" 1
+}

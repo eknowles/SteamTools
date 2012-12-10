@@ -1,0 +1,1 @@
+pyuic4 scgui.ui -o windowUi.py

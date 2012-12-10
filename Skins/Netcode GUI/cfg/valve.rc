@@ -1,0 +1,42 @@
+// Netcode Illuminati Gui
+// Created by Ethos_
+// Last Modified                               _____________
+//___________________________________________.(º 9/20/2011 º)
+//¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+// Credit: Console open script was taken from KLUTCH's Hyphen Gui and modified
+// load the base configuration
+//exec default.cfg
+r_decal_cullsize 1
+
+// Setup custom controller
+exec joystick.cfg
+
+// run a user script file if present
+exec netcode_gui/netcode_gui.scr
+exec autoexec.cfg
+exec KLUTCH.cfg
+//
+// stuff command line statements
+//
+stuffcmds
+con_enable "1"
+clear
+
+toggleconsole
+echo ""
+echo "[======================================]"
+echo ""
+echo "			    Netcode Illuminati"
+echo "			   Official Netcode GUI"
+echo ""
+echo "Type "ncigui" in console to see a list of available commands"
+echo ""
+echo "		      www.NetcodeSource.com"
+echo "                                         "
+echo "[======================================]"
+echo ""
+echo "	    Team Netcode powered by EOReality.net			   "
+echo ""
+echo ""
+echo ""
+
