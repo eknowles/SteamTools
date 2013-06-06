@@ -451,7 +451,7 @@ QTabBar::tab:!selected {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <property name="elideMode">
      <enum>Qt::ElideLeft</enum>
@@ -1064,7 +1064,7 @@ p, li { white-space: pre-wrap; }
       </item>
       <item>
        <property name="text">
-        <string>Demos</string>
+        <string>Replays</string>
        </property>
        <property name="icon">
         <iconset resource="icons.qrc">
@@ -1082,7 +1082,7 @@ p, li { white-space: pre-wrap; }
       </item>
       <item>
        <property name="text">
-        <string>Skins</string>
+        <string>GUI</string>
        </property>
        <property name="icon">
         <iconset resource="icons.qrc">
@@ -1749,12 +1749,15 @@ p, li { white-space: pre-wrap; }
        </rect>
       </property>
       <property name="title">
-       <string>Steam Account</string>
+       <string>Steam Path</string>
       </property>
       <property name="flat">
        <bool>true</bool>
       </property>
-      <widget class="QLineEdit" name="cstrikepath_input">
+      <widget class="QLineEdit" name="steampath">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -1773,10 +1776,10 @@ p, li { white-space: pre-wrap; }
         <bool>true</bool>
        </property>
        <property name="placeholderText">
-        <string>Path to steam account</string>
+        <string/>
        </property>
       </widget>
-      <widget class="QPushButton" name="BTN_cstrikepath">
+      <widget class="QPushButton" name="BTN_steampath">
        <property name="geometry">
         <rect>
          <x>270</x>
@@ -1786,7 +1789,7 @@ p, li { white-space: pre-wrap; }
         </rect>
        </property>
        <property name="text">
-        <string>GET PATH</string>
+        <string>REFRESH</string>
        </property>
       </widget>
      </widget>

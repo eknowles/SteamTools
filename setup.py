@@ -4,7 +4,7 @@ import py2exe, sys, os
 from glob import glob
 from distutils.core import setup
 
-data_files = [("Microsoft.VC90.CRT", glob(r'C:\Windows\winsxs\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.6161_none_50934f2ebcb7eb57\*.*'))]
+data_files = [("Microsoft.VC90.CRT", glob(r'C:\Windows\winsxs\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.1_none_e163563597edeada\*.*'))]
 setup(
     data_files=data_files,
     windows = [

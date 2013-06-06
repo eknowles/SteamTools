@@ -36,6 +36,7 @@ from splashUi import Ui_Splash
 from demofile import demoFile
 import elementtree.ElementTree as ET
 import xml.etree.ElementTree as xml
+from _winreg import *
 
 class Splash(QtGui.QDialog):
         
@@ -47,7 +48,7 @@ class Splash(QtGui.QDialog):
         self.splashui=Ui_Splash()
         self.splashui.setupUi(self)
         
-        self.version = "2.0"
+        self.version = "3.0"
         self.programname = "Steam Tools"
         
         self.splashui.msg.stackUnder(self.splashui.title)
@@ -71,14 +72,15 @@ class Splash(QtGui.QDialog):
                 , self.programname + " v" + latestversion + " has been released!\nDo you wish to visit the download page now?"
                 , QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
             if response == QtGui.QMessageBox.Yes:
-                print "Open Download Page"
+                print str(self.TimeStamp()) + "Open Download Page"
                 webbrowser.open_new_tab(str(latestlink))
             else:
-                print "Open Download Page"
+                print str(self.TimeStamp()) + "Open Download Page"
                 
         else:
             self.splashui.msg.setText("You have the latest update installed.")
-        self.splashui.msg.setText("Loading main application...")
+            
+#        self.splashui.msg.setText("Loading application...")
             
 class Main(QtGui.QMainWindow):
     
@@ -95,8 +97,6 @@ class Main(QtGui.QMainWindow):
         QtGui.QWidget.mousePressEvent(self, event)
         
     def __init__(self):
-        
-        
         #=======================================================================
         # Game Defs
         #=======================================================================
@@ -110,7 +110,7 @@ class Main(QtGui.QMainWindow):
         
         self.HeaderFileDownload = 0
         
-        self.beta = 0
+        self.beta = 1
         QtGui.QMainWindow.__init__(self)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
@@ -140,7 +140,7 @@ class Main(QtGui.QMainWindow):
         
         self.ui.BTN_skinFolder.clicked.connect(self.kgui.openskinsfolder)
         self.ui.btn_OpenGameFolder.clicked.connect(self.OpenGameFolder)
-        self.ui.BTN_cstrikepath.clicked.connect(self.SteamAccountFolderDialog)
+        self.ui.BTN_steampath.clicked.connect(self.GrabSteamRegs)
         self.ui.BTN_refreshteams.clicked.connect(self.resetteamtab)
         self.ui.BTN_updateTeams.clicked.connect(self.applyteamupdate)
         self.ui.BTN_swapSides.clicked.connect(self.clickedswapteams)  
@@ -166,7 +166,6 @@ class Main(QtGui.QMainWindow):
         self.ui.BTN_viewdemo.clicked.connect(self.launchdemo)
         self.ui.btn_feedback.clicked.connect(self.SubmitFeedback)
         
-        
         self.kgui.settings.set('main', 'version', self.Splash.version)
         self.ui.btn_minimize.clicked.connect(self.mini)
         self.connect(self.ui.treedemos,QtCore.SIGNAL("itemClicked(QTreeWidgetItem * ,int)"),self.democlicked)
@@ -174,19 +173,22 @@ class Main(QtGui.QMainWindow):
         self.ui.btn_dldownload.clicked.connect(self.DownloadFileClicked)
         self.ui.BTN_cfgshare.clicked.connect(self.ShareCFG)
         self.ui.BTN_UpdateSettings.clicked.connect(self.UpdateSettings)
+        self.GrabSteamRegs()
         self.RefreshSettings()
         
         if self.kgui.settings.get("main", "steamacc") == "":
             print str(self.TimeStamp()) + "no account set yet"
             self.ui.tabWidget.setCurrentIndex(5)
             self.ui.game.setCurrentIndex(-1)
-            QtGui.QMessageBox.information(self
-                , "First time launch"
-                , "Welcome to "+ self.Splash.programname +".\n\nIf this is the first time you using it you need to set up your Steam account path in the settings tab. If you have any problems or bugs please submit them to the google code page."
-                , QtGui.QMessageBox.Ok)
-            self.SteamAccountFolderDialog()
+#            QtGui.QMessageBox.information(self
+#                , "First time launch"
+#                , "Welcome to "+ self.Splash.programname +".\n\nIf this is the first time you using it you need to set up your Steam account path in the settings tab. If you have any problems or bugs please submit them to the google code page."
+#                , QtGui.QMessageBox.Ok)
+#            self.SteamAccountFolderDialog()
         else:
             self.GameToIndex()
+        
+
         
         #=======================================================================
         # Connecting Tools tab functions to UI
@@ -274,6 +276,7 @@ class Main(QtGui.QMainWindow):
             base = sys.prefix
         else: # otherwise this is a regular python script
             base = os.path.dirname(os.path.realpath(__file__))
+        print base
         return base
        
     def DownloadFileClicked(self):
@@ -292,6 +295,7 @@ class Main(QtGui.QMainWindow):
         self.dldir = os.path.join(scriptpath, 'Downloads', cat, self.kgui.settings.get('main', 'game'))
         
         self.ui.DownloadProgressBar.setFormat("Retrieving data from " + cat + ". Please wait...")
+        
         if cat == "Configs":            
             tv.headerItem().setText(0, "")
             tv.headerItem().setText(1, "Player")
@@ -319,7 +323,7 @@ class Main(QtGui.QMainWindow):
                     tv.addTopLevelItem(tvitem)
             tv.sortByColumn(1)
             
-        elif cat == "Demos":
+        elif cat == "Replays":
             tv.headerItem().setText(0, "")
             tv.headerItem().setText(1, "Date")
             tv.headerItem().setText(2, "Home")
@@ -333,7 +337,7 @@ class Main(QtGui.QMainWindow):
             tv.setColumnWidth(2,100)
             tv.setColumnWidth(3,100)
             tv.setColumnWidth(4,70)
-            tv.setColumnWidth(5,70)
+            tv.setColumnWidth(5,150)
             
             tree = xml.parse(urllib.urlopen(self.DL_Cat_Demos))
             lst = tree.findall("demo")
@@ -350,9 +354,10 @@ class Main(QtGui.QMainWindow):
                     tvitem.setIcon(3, QtGui.QIcon(":/flags/icons/flags/"+item.findtext('AwayCountry')+".gif"))
                     tvitem.setData(4,0,item.findtext('Map'))
                     tvitem.setData(5,0,item.findtext('Event'))
-                    tvitem.setData(6,0,item.findtext('File'))
+                    #tvitem.setData(6,0,item.findtext('File'))
                     tv.addTopLevelItem(tvitem)
-                    
+            tv.sortByColumn(1)
+            
         elif cat == "Maps":
             tv.headerItem().setText(0, "")
             tv.headerItem().setText(1, "Type")
@@ -380,7 +385,7 @@ class Main(QtGui.QMainWindow):
                     tvitem.setData(3,0,item.findtext('File'))
                     tv.addTopLevelItem(tvitem)
                     
-        elif cat == "Skins":
+        elif cat == "GUI":
             tv.headerItem().setText(0, "Name")
             tv.headerItem().setText(1, "Author")
             tv.headerItem().setText(2, "Uploaded")
@@ -444,7 +449,7 @@ class Main(QtGui.QMainWindow):
             self.ui.steamidtool.setText("Bad ID")
         
     def SubmitFeedback(self):
-        webbrowser.open_new_tab("http://www.scgui.com/ask")
+        webbrowser.open_new_tab("http://twitter.com/NedKnowles")
     def ChangeSteamPicture(self):
         webbrowser.open_new_tab("steam://open/settings/friends/")
     def EditSteamProfile(self):
@@ -520,6 +525,9 @@ class Main(QtGui.QMainWindow):
             
     def RefreshSettings(self):
         print str(self.TimeStamp()) + "RefreshSettings"
+        
+        self.GrabSteamRegs()
+        
         gameoptions = self.kgui.settings.get('launchoptions', 'game')
         demooptions = self.kgui.settings.get('launchoptions', 'demo')
         msid = self.kgui.settings.get('user', 'steamid')
@@ -530,15 +538,6 @@ class Main(QtGui.QMainWindow):
             self.GetPlayerName(str(msid))
         
         self.ui.steamid.setText(str(msid))
-        
-        if not self.kgui.steamacc == "":
-            if self.beta == 1:
-                self.setWindowTitle(self.Splash.programname + " " + self.Splash.version + " - Private Beta")
-            else:
-                self.setWindowTitle(self.Splash.programname + " " + self.Splash.version + " - " + self.kgui.settings.get('user', 'name'))
-            self.ui.cstrikepath_input.setText(self.kgui.steamacc)
-        else:
-            self.setWindowTitle(self.Splash.programname + " " + self.Splash.version + " - Unregistered")
     
     def UpdateSettings(self):
         print str(self.TimeStamp()) + " >>>>>>>>>>>>>> UpdateSettings"
@@ -546,11 +545,14 @@ class Main(QtGui.QMainWindow):
         goptions = self.ui.gameoptions.text()
         doptions = self.ui.demooptions.text()
         
+        cfgfile = open("settings.ini", "w")
         if not sid == "":
             self.kgui.settings.set('user', 'steamid', str(sid))
-            print str(self.TimeStamp()) + "Steam ID " + str(sid)
         self.kgui.settings.set('launchoptions', 'game', str(goptions))
         self.kgui.settings.set('launchoptions', 'demo', str(doptions))
+        
+        self.kgui.settings.write(cfgfile)
+        cfgfile.close()
         
         print str(self.TimeStamp()) + "Setting Launch Options: " + str(goptions)
         print str(self.TimeStamp()) + "Setting Demo Options: " + str(doptions)
@@ -570,28 +572,37 @@ class Main(QtGui.QMainWindow):
             print str(self.TimeStamp()) + "Converted 64ID: " + steamid
         else:
             self.customurl = steamid
-            
-        try:
-            tree = ET.parse(urllib.urlopen("http://steamcommunity.com/profiles/"+steamid+"/?xml=1&l=english"))
-            steamplayer = tree.findtext("steamID")
-            if not steamplayer == "None":
-                self.kgui.settings.set('user', 'name', str(steamplayer))
-                print str(self.TimeStamp()) + "Player set to " + str(steamplayer)
-                self.setWindowTitle(self.Splash.programname + " " + self.Splash.version + " - " + str(steamplayer))
-                """QtGui.QMessageBox.information(self
-                    , "Steam ID Saved"
-                    , "Player name set to " +str(steamplayer)+ ". This will be used when uploading replays and configs."
-                    , QtGui.QMessageBox.Ok)"""
-            else:
-                print str(self.TimeStamp()) + "Error"
-        except:
-            print str(self.TimeStamp()) + "Error: Cannot get feed"
-            
-    
+        
+#        STEAM_0:0:26262312
+#        76561198012790352
+# http://steamcommunity.com/profiles/76561198012790352/?xml=1&l=english
+        
+             
+#        try:
+#            tree = ET.parse(urllib.urlopen("http://steamcommunity.com/profiles/"+steamid+"/?xml=1&l=english"))
+#            steamplayer = tree.findtext("steamID")
+#            if not steamplayer == "None":
+#                self.kgui.settings.set('user', 'name', str(steamplayer))
+#                print str(self.TimeStamp()) + "Player set to " + str(steamplayer)
+#                if self.beta == 1:
+#                    self.setWindowTitle(self.Splash.programname + " " + self.Splash.version + " BETA - " + self.kgui.settings.get('user', 'name'))
+#                else:
+#                    self.setWindowTitle(self.Splash.programname + " " + self.Splash.version + " - " + self.kgui.settings.get('user', 'name'))
+#                
+#                """QtGui.QMessageBox.information(self
+#                    , "Steam ID Saved"
+#                    , "Player name set to " +str(steamplayer)+ ". This will be used when uploading replays and configs."
+#                    , QtGui.QMessageBox.Ok)"""
+#            else:
+#                print str(self.TimeStamp()) + "Error"
+#        except:
+#            print str(self.TimeStamp()) + "Error: Cannot get feed"
+#            
+
     def ShareCFG(self):
         print str(self.TimeStamp()) + "ShareCFG"
+        cfg = str((self.ui.cfglist.currentItem().text()))
         if not str(self.ui.steamid.text()) == "":
-            cfg = str((self.ui.cfglist.currentItem().text()))
             url = submit(unicode(self.ui.cfgEdit.toPlainText()),
                  paste_format="javascript",
                  paste_name=self.kgui.settings.get('user', 'name') + " - " + cfg,
@@ -606,6 +617,10 @@ class Main(QtGui.QMainWindow):
                 , QtGui.QMessageBox.Ok)
             self.CopyToClipboard(fullurl)
         else:
+            QtGui.QMessageBox.warning(self
+                , "Sorry"
+                , "We cannot upload " + cfg + " yet!\nPlease enter your Steam ID into the settings tab and try again."
+                , QtGui.QMessageBox.Ok)
             print str(self.TimeStamp()) + "Steam ID Not Found"
         
     def CopyToClipboard(self, data):
@@ -633,12 +648,11 @@ class Main(QtGui.QMainWindow):
         demoui.setupUi(demogui)
         demogui.open()
 
-
     def mini(self):
         self.showMinimized()
         
     def setWindowTitle(self, text):
-        print str(self.TimeStamp()) + "setWindowTitle"
+        print str(self.TimeStamp()) + "setWindowTitle to " + str(text)
         self.ui.apptitle.setText(text)
 
     """def steamadd(self):
@@ -681,11 +695,11 @@ class Main(QtGui.QMainWindow):
                 self.ui.cfglist.clear()
                 self.RefreshCFGFiles()
                 self.RefreshDemos()       
-                self.ui.cstrikepath_input.setText("")
-                if self.beta == 1:
-                    self.setWindowTitle(self.Splash.programname + " " + self.Splash.version + " - Private Beta (Unregistered)")
-                else:
-                    self.setWindowTitle(self.Splash.programname + " " + self.Splash.version + " - Unregistered")
+                self.ui.steampath.setText("")
+#                if self.beta == 1:
+#                    self.setWindowTitle(self.Splash.programname + " " + self.Splash.version + " (Private Beta)")
+#                else:
+#                    self.setWindowTitle(self.Splash.programname + " " + self.Splash.version + "")
                 self.ui.tabWidget.setCurrentIndex(4)
         else:
             print str(self.TimeStamp()) + "No settings exist yet"
@@ -825,11 +839,13 @@ class Main(QtGui.QMainWindow):
         cfgfile = open("settings.ini",'w')
         
         if text == "Counter-Strike: Source": # Index 0
-            gamepathsel = os.path.join(self.kgui.settings.get('main', 'steamacc'), "counter-strike source", "cstrike", "cfg")
+            gamepathsel = os.path.join(self.kgui.settings.get('main', 'steamacc'), "steamapps\common\Counter-Strike Source\cstrike\cfg")
+            print str(self.TimeStamp()) + "Game Path = " + gamepathsel
             if os.path.exists(gamepathsel): 
                 self.kgui.settings.set('main', 'game', '240')
-                self.kgui.settings.set('main', 'gamepath', '%(steamacc)s\counter-strike source\cstrike')
-                self.kgui.settings.set('main', 'cfgpath', '%(steamacc)s\counter-strike source\cstrike\cfg')
+                pathjoined = os.path.join(self.kgui.settings.get('main', 'steamacc'), "steamapps\common\Counter-Strike Source\cstrike")
+                self.kgui.settings.set('main', 'gamepath', pathjoined)
+                self.kgui.settings.set('main', 'cfgpath', os.path.join(pathjoined, "cfg"))
                 print str(self.TimeStamp()) + "Game set to css"
                 self.RefreshCFGFiles()
                 self.ui.cfglist.clear()
@@ -843,13 +859,14 @@ class Main(QtGui.QMainWindow):
                 self.RefreshGameCombo()
             
         if text == "Counter-Strike: Global Offensive": # Index 1
-            gamepathsel = os.path.join(self.kgui.settings.get('main', 'steamacc'), "../", "common\Counter-Strike Global Offensive\csgo\cfg")
+            gamepathsel = os.path.join(self.kgui.settings.get('main', 'steamacc'), "steamapps\common\Counter-Strike Global Offensive\csgo\cfg")
+            print str(self.TimeStamp()) + "Game Path = " + gamepathsel
             if os.path.exists(gamepathsel): 
                 self.kgui.settings.set('main', 'game', '730')
-                pathsplit = os.path.split(self.kgui.settings.get('main', 'steamacc'))
-                pathjoined = os.path.join(pathsplit[0], "common\Counter-Strike Global Offensive\csgo")
+                pathjoined = os.path.join(self.kgui.settings.get('main', 'steamacc'), "steamapps\common\Counter-Strike Global Offensive\csgo")
                 self.kgui.settings.set('main', 'gamepath', pathjoined)
                 self.kgui.settings.set('main', 'cfgpath', os.path.join(pathjoined, "cfg"))
+                
                 print str(self.TimeStamp()) + "Game set to csgo"
                 self.RefreshCFGFiles()
                 self.ui.cfglist.clear()
@@ -863,12 +880,13 @@ class Main(QtGui.QMainWindow):
                 self.RefreshGameCombo()
             
         if text == "Team Fortress 2": # Index 2
-            gamepathsel = os.path.join(self.kgui.settings.get('main', 'steamacc'), "team fortress 2", "tf", "cfg")
+            gamepathsel = os.path.join(self.kgui.settings.get('main', 'steamacc'), "steamapps\common\Team Fortress 2\tf\cfg")
             print str(self.TimeStamp()) + "Game Path = " + gamepathsel
             if os.path.exists(gamepathsel): 
                 self.kgui.settings.set('main', 'game', '440')
-                self.kgui.settings.set('main', 'gamepath', '%(steamacc)s\\team fortress 2\\tf')
-                self.kgui.settings.set('main', 'cfgpath', '%(steamacc)s\\team fortress 2\\tf\cfg')
+                pathjoined = os.path.join(self.kgui.settings.get('main', 'steamacc'), "steamapps\common\Team Fortress 2\tf")
+                self.kgui.settings.set('main', 'gamepath', pathjoined)
+                self.kgui.settings.set('main', 'cfgpath', os.path.join(pathjoined, "cfg"))
                 print str(self.TimeStamp()) + "Game set to tf2"
                 self.RefreshCFGFiles()
                 self.ui.cfglist.clear()
@@ -882,12 +900,13 @@ class Main(QtGui.QMainWindow):
                 self.RefreshGameCombo()
             
         if text == "Half-Life 2: Deathmatch": # Index 3
-            gamepathsel = os.path.join(self.kgui.settings.get('main', 'steamacc'), "half-life 2 deathmatch", "hl2mp", "cfg")
+            gamepathsel = os.path.join(self.kgui.settings.get('main', 'steamacc'), "steamapps\common\half-life 2 deathmatch\hl2mp\cfg")
             print str(self.TimeStamp()) + "Game Path = " + gamepathsel
             if os.path.exists(gamepathsel): 
                 self.kgui.settings.set('main', 'game', '320')
-                self.kgui.settings.set('main', 'gamepath', '%(steamacc)s\half-life 2 deathmatch\hl2mp')
-                self.kgui.settings.set('main', 'cfgpath', '%(steamacc)s\half-life 2 deathmatch\hl2mp\cfg')
+                pathjoined = os.path.join(self.kgui.settings.get('main', 'steamacc'), "steamapps\common\half-life 2 deathmatch\hl2mp")
+                self.kgui.settings.set('main', 'gamepath', pathjoined)
+                self.kgui.settings.set('main', 'cfgpath', os.path.join(pathjoined, "cfg"))
                 print str(self.TimeStamp()) + "Game set to hl2dm"
                 self.RefreshCFGFiles()
                 self.ui.cfglist.clear()
@@ -901,12 +920,13 @@ class Main(QtGui.QMainWindow):
                 self.RefreshGameCombo()
             
         if text == "Counter-Strike": # Index 4
-            gamepathsel = os.path.join(self.kgui.settings.get('main', 'steamacc'), "counter-strike", "cstrike")
+            gamepathsel = os.path.join(self.kgui.settings.get('main', 'steamacc'), "steamapps\common\Half-Life\cstrike")
             print str(self.TimeStamp()) + "Game Path = " + gamepathsel
             if os.path.exists(gamepathsel): 
                 self.kgui.settings.set('main', 'game', '10')
-                self.kgui.settings.set('main', 'gamepath', '%(steamacc)s\counter-strike\cstrike')
-                self.kgui.settings.set('main', 'cfgpath', '%(steamacc)s\counter-strike\cstrike')
+                pathjoined = os.path.join(self.kgui.settings.get('main', 'steamacc'), "steamapps\common\Half-Life\cstrike")
+                self.kgui.settings.set('main', 'gamepath', pathjoined)
+                self.kgui.settings.set('main', 'cfgpath', pathjoined)
                 print str(self.TimeStamp()) + "Game set to cs"
                 self.RefreshCFGFiles()
                 self.RefreshDemos()
@@ -917,13 +937,12 @@ class Main(QtGui.QMainWindow):
                     , QtGui.QMessageBox.Ok)
                 self.RefreshGameCombo()
             
-        if text == "Dota 2 Beta": # Index 5
-            gamepathsel = os.path.join(self.kgui.settings.get('main', 'steamacc'), "../", "common\dota 2 beta\dota\cfg")
+        if text == "Dota 2": # Index 5
+            gamepathsel = os.path.join(self.kgui.settings.get('main', 'steamacc'), "steamapps\common\dota 2\dota\cfg")
             print str(self.TimeStamp()) + "Game Path = " + gamepathsel
             if os.path.exists(gamepathsel): 
                 self.kgui.settings.set('main', 'game', '570')
-                pathsplitdota = os.path.split(self.kgui.settings.get('main', 'steamacc'))
-                pathjoineddota = os.path.join(pathsplitdota[0], "common\dota 2 beta\dota")
+                pathjoineddota = os.path.join(self.kgui.settings.get('main', 'steamacc'), "steamapps\common\dota 2\dota")
                 self.kgui.settings.set('main', 'gamepath', pathjoineddota)
                 self.kgui.settings.set('main', 'cfgpath', os.path.join(pathjoineddota, "cfg"))
                 print str(self.TimeStamp()) + "Game set to dota2beta"
@@ -939,12 +958,11 @@ class Main(QtGui.QMainWindow):
                 self.RefreshGameCombo()
             
         if text == "Left 4 Dead 2": # Index 6
-            gamepathsel = os.path.join(self.kgui.settings.get('main', 'steamacc'), "../", "common\left 4 dead 2\left4dead2\cfg")
+            gamepathsel = os.path.join(self.kgui.settings.get('main', 'steamacc'), "steamapps\common\left 4 dead 2\left4dead2\cfg")
             print str(self.TimeStamp()) + "Game Path = " + gamepathsel
             if os.path.exists(gamepathsel): 
                 self.kgui.settings.set('main', 'game', '550')
-                pathsplitdota = os.path.split(self.kgui.settings.get('main', 'steamacc'))
-                pathjoineddota = os.path.join(pathsplitdota[0], "common\left 4 dead 2\left4dead2")
+                pathjoineddota = os.path.join(self.kgui.settings.get('main', 'steamacc'), "steamapps\common\left 4 dead 2\left4dead2")
                 self.kgui.settings.set('main', 'gamepath', pathjoineddota)
                 self.kgui.settings.set('main', 'cfgpath', os.path.join(pathjoineddota, "cfg"))
                 print str(self.TimeStamp()) + "Game set to l4d2"
@@ -993,6 +1011,23 @@ class Main(QtGui.QMainWindow):
                     elif fname.endswith("vdf"):
                         self.ui.cfglist.addItem(QtGui.QListWidgetItem(QtGui.QIcon(":/icons/icons/games/iconInventory.png"),fname))
             
+    def GrabSteamRegs(self):
+        print str(self.TimeStamp()) + "Getting Steam Keys from Registry"
+        steamhkey = OpenKey(HKEY_CURRENT_USER, r'Software\\Valve\\Steam', 0, KEY_ALL_ACCESS)
+        self.SteamPath = os.path.abspath(QueryValueEx(steamhkey, "SteamPath")[0])
+        self.LastGameNameUsed = QueryValueEx(steamhkey, "LastGameNameUsed")[0]
+        self.ui.steampath.setText(self.SteamPath)
+        cfgfile = open("settings.ini", "w")
+        self.kgui.settings.set('main', 'steamacc', str(self.SteamPath))
+        self.kgui.settings.set('user', 'name', str(self.LastGameNameUsed))
+        self.kgui.settings.write(cfgfile)
+        cfgfile.close()
+        print str(self.TimeStamp()) + "Player set to " + str(self.LastGameNameUsed)
+        if self.beta == 1:
+            self.setWindowTitle(self.Splash.programname + " " + self.Splash.version + " BETA - " + self.kgui.settings.get('user', 'name'))
+        else:
+            self.setWindowTitle(self.Splash.programname + " " + self.Splash.version + " - " + self.kgui.settings.get('user', 'name'))  
+        
     def SteamAccountFolderDialog(self):
         fname = QtGui.QFileDialog.getExistingDirectory(self, "Choose your steam account folder", 
                 "/Program Files (x86)/Steam/steamapps",
@@ -1003,16 +1038,9 @@ class Main(QtGui.QMainWindow):
         self.kgui.settings.set('main', 'steamacc', str(fname))
         self.kgui.settings.write(cfgfile)
         cfgfile.close()
-        self.ui.cstrikepath_input.setText(fname)
+        self.ui.steampath.setText(fname)
         self.kgui.getinstalledskin(fname)
         pathsplit = os.path.split(str(fname))
-        if self.beta == 1:
-            self.setWindowTitle(self.Splash.programname + " " + self.Splash.version + " - Private Beta")
-        else:
-            if pathsplit[1] == "":
-                self.setWindowTitle(self.Splash.programname + " " + self.Splash.version + " - Unregistered")
-            else:
-                self.setWindowTitle(self.Splash.programname + " " + self.Splash.version + " - " + pathsplit[1])
         
     def cfgfile_save(self):
         currentfile = str(self.ui.cfglist.currentItem().text())
@@ -1269,7 +1297,7 @@ class Main(QtGui.QMainWindow):
             #print str(self.TimeStamp()) + "Skin: " + self.kgui.settings.get('main', 'installedskin') + " is NOT installed"
     
     def DeleteClientRegBlob(self):
-        steamdir = os.path.join(self.kgui.settings.get('main', 'steamacc'), "../../")
+        steamdir = os.path.join(self.kgui.settings.get('main', 'steamacc'))
         normsteampath = os.path.normpath(steamdir)
         bloblocation = os.path.join(normsteampath, "ClientRegistry.blob")
         print normsteampath
@@ -1283,8 +1311,10 @@ class Main(QtGui.QMainWindow):
     def launchgame(self):
         gameid = self.kgui.settings.get('main', 'game')
         gamelaunchoptions = self.kgui.settings.get('launchoptions', 'game')
-        steamexe = os.path.join(self.kgui.settings.get('main', 'steamacc'), "../../")
-        subprocess.Popen(steamexe + "Steam.exe -applaunch "+ str(gameid) + " " + gamelaunchoptions)    
+        steamexe = os.path.join(self.kgui.settings.get('main', 'steamacc'))
+        datpath = steamexe + "/Steam.exe -applaunch "+ str(gameid) + " " + gamelaunchoptions
+        print datpath
+        subprocess.Popen(datpath)    
     
     def launchdemo(self):
         gameid = self.kgui.settings.get('main', 'game')
@@ -1292,8 +1322,10 @@ class Main(QtGui.QMainWindow):
         demolaunchoptions = self.kgui.settings.get('launchoptions', 'demo')
         if not self.ui.tick.text() == "":
             demolaunchoptions = demolaunchoptions + " +demo_gototick " + str(self.ui.tick.text())
-        steamexe = os.path.join(self.kgui.settings.get('main', 'steamacc'), "../../")
-        subprocess.Popen(steamexe + "Steam.exe -applaunch "+ str(gameid) +" " + demolaunchoptions + " +playdemo " + demo)
+        steamexe = os.path.join(self.kgui.settings.get('main', 'steamacc'))
+        datpath = steamexe + "/Steam.exe -applaunch "+ str(gameid) + " " + demolaunchoptions + " +playdemo " + demo
+        print datpath
+        subprocess.Popen(datpath)    
     
     def democlicked(self, item):
         self.selecteddemo = unicode(item.text(2))
@@ -1327,10 +1359,11 @@ class Main(QtGui.QMainWindow):
                 self.DLFileID = str(item.text(0) + "-" + item.text(1)) 
             elif cat == "Maps":
                 self.DLFileID = str(item.text(0) + "-" + item.text(2)) 
-            elif cat == "Demos":
-                self.DLFileID = str(item.text(0) + "-" + item.text(4)) 
-            elif cat == "Skins":
+            elif cat == "Replays":
+                self.DLFileID = str( item.text(0) + "-" + item.text(4) +"-"+ item.text(2) + "_vs_" + item.text(3)  ) 
+            elif cat == "Mods":
                 self.DLFileID = str(item.text(0)) 
+                
         print self.DLFileID
         
     def downloadChunks(self, url, newfilename):    
@@ -1456,6 +1489,8 @@ class Main(QtGui.QMainWindow):
     def SkinInstall(self, desiredskin):  
         dirtydesiredskindir = os.path.join(self.dldir, desiredskin)
         desiredskindir = os.path.normpath(dirtydesiredskindir)
+        if not os.path.exists(desiredskindir):
+            os.makedirs(desiredskindir)
         distutils.dir_util.copy_tree(desiredskindir, self.kgui.settings.get('main', 'gamepath'))
         # This will then open and write our new desiredskin to the settings
         self.kgui.settings.set('skin', 'installedskin', desiredskin)
